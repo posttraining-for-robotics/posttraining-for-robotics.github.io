@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Workshop on Posttraining for Robotics Foundation Models</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Custom styles for this template -->
+
+
+	<link href="../css/scrolling-nav.css" rel="stylesheet">
+	<link href="../css/style.css" rel="author stylesheet">
+	    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0M445FTS98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0M445FTS98');
+</script>
+    </head>
+
+    <body id="page-top">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
+	    <div class="container bar-container">
+		<a class="title-head" href="#page-top">Posttraining for Robotics Foundation Models</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+		    <ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#challenge">Challenge</a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#speakers">Speakers</a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#schedule">Schedule</a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#topics">Topics</a>
+				</li>
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#organizers">Organizers</a>
+				</li>
+		    </ul>
+		</div>
+	    </div>
+	</nav>
+
+	<header class="headercontainer" style="padding: 0%; max-height: none; background-color: white;">
+	    <div style="background-color: rgba(160,160,160,0)" class="text-center">
+		<div style="padding-bottom: 6%; padding-top: 6%;">
+	    <div class="container titlebox"; style="display: inline-block; background-color:rgba(0,0,0, 0.7); width:auto; color: white;">
+		<p style="text-align: center; margin-bottom: 2" class="title">Posttraining for Robotics Foundation Models</p>
+		<p style="text-align: center; margin-bottom: 0" class="subtitle">Workshop RSS 2026</p>
+		<!-- <p style="text-align: center; margin-bottom: 0" class="subtitle">Our paper submission is hosted on OpenReview. Here is the <a href="https://openreview.net/group?id=roboticsfoundation.org/RSS/2024/Workshop/SIHR">paper submission website</a></p> -->
+		<p style="text-align: center; margin-bottom: 0" class="subtitle">University of Technology Sydney</p>
+
+		</div>
+	    </div>
+	    </div>
+	</header>
+
+	    <hr class="half-rule"/>
+	<section id="about">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+			<span class=titlesec>About</span>
+			<br>
+			<span>
+			Post-training is a crucial stage in robotics foundation model research: it enables robots to go beyond large-scale pretraining on expert demonstrations and further improve performance through their own interaction with the environment. By collecting interaction rollouts, distinguishing good and bad behaviors, and iteratively optimizing policies, post-training can substantially enhance precision, failure recovery, and generalization—bringing robotics foundation models closer to reliable real-world deployment.
+			<br><br>
+			This challenge and workshop will focus on the foundational questions and key challenges in the post-training stage of robotics foundation models. The event consists of two tightly coupled components: (1) a pre-workshop challenge and (2) an in-person workshop at RSS. The workshop program will include four parts: the pre-workshop challenge, invited speaker talks, team presentations, and a panel discussion.
+			<br><br>
+			We expect the workshop to (i) establish shared problem definitions and evaluation protocols for robotics foundation model post-training, (ii) surface empirical lessons and failure modes from real-robot rollouts, and (iii) catalyze reusable resources (e.g., benchmarking protocol, reports, and baselines) that enable more reproducible and scalable research in this area.
+			</span>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+
+<hr class="half-rule"/>
+	<section id="challenge">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+			<span class=titlesec>Challenge</span>
+			<br>
+			<span>
+			During the challenge, we will first provide a high-quality, standardized real-robot bimanual manipulation dataset and use a standardized real-robot benchmark to evaluate participating teams in the first round. Based on the results, we will select a subset of teams and support them in conducting iterative policy inference. In the second round, selected teams can leverage the rollouts obtained from deploying their own policies to further improve their policies via post-training.
+			<br><br>
+			We expect around 10 teams in the first round, and approximately 3 teams after selection. Team registration will open at a later stage.
+			<br><br>
+			<b>Challenge details coming soon.</b>
+			</span>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+	<hr class="half-rule"/>
+	<section id="speakers">
+
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+
+		<!-- <span class=titlesec>Speakers and Panelists</span> -->
+		<span class=titlesec>Invited Speakers</span>
+
+		<br><br>
+
+		<div class="row">
+			
+			<a href='https://kpertsch.github.io/'>
+		    <div class="profpic xlarge-1 columns">
+				<img  src="images/karl.png" class="figure-img img-fluid">
+				<p class=profname>  <a href="https://kpertsch.github.io/">Karl Pertsch</a> </p>
+				<p class=institution>Physical Intelligence</p>
+		    </div>
+			</a>
+			
+			<a href='https://homes.cs.washington.edu/~abhgupta/'>
+			<div class="profpic xlarge-1 columns">
+				<img  src="../images/abhgupta_sm.png" class="figure-img img-fluid ">
+				<p class=profname>  <a href="https://homes.cs.washington.edu/~abhgupta/">Abhishek Gupta</a> </p>
+				<p class=institution>University of Washington</p>
+			</div>
+			</a>
+
+			<a href='https://shurans.github.io/'>
+			<div class="profpic xlarge-1 columns">
+				<img  src=../images/shuran_song.png class="figure-img img-fluid ">
+				<p class=profname>  <a href="https://shurans.github.io/">Shuran Song</a> </p>
+				<p class=institution>Stanford University</p>
+			</div>
+			</a>
+		</div>
+
+		</div>
+</div>
+
+	</section>
+
+
+	<hr class="half-rule"/>
+	<section class="">
+	    <div class="container" id="schedule">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+			<span class="titlesec"><span></span>Schedule</span>
+			<br><br>
+			<table class="table table-striped">
+				<tbody>
+				<tr>
+					<th style="width:30%"> Time </th>
+					<th> Event </th>
+				</tr>
+				<tr>
+					<td> 9:00 - 10:30 </td>
+					<td> <b>Invited Talks</b> <br>
+						Karl Pertsch — Expanding the Capabilities of Generalist Robot Policies <br>
+						Abhishek Gupta — Efficiently Applying Reinforcement Learning in Real-World Robots <br>
+						Shuran Song — Skill Mastering Beyond Human Demonstrations
+					</td>
+				</tr>
+				<tr>
+					<td> 10:30 - 11:00 </td>
+					<td> <b>Coffee Break &amp; Participating Teams' Policy Deployment Demonstrations</b> </td>
+				</tr>
+				<tr>
+					<td> 11:00 - 12:00 </td>
+					<td> <b>Participating Team Reports</b> </td>
+				</tr>
+				<tr>
+					<td> 12:00 - 13:00 </td>
+					<td> <b>Panel Discussion &amp; Audience Q&amp;A</b> </td>
+				</tr>
+				</tbody>
+			</table>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+<hr class="half-rule"/>
+	<section id="topics">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-10 mx-auto">
+			<span class="titlesec">Discussion Topics</span><br>
+			<p>Discussion topics for this workshop include, but are not limited to:</p>
+			<ul>
+			  <li>Post-Training Paradigms for Robotics Foundation Models</li>
+			  <li>Efficient Post-Training System Design</li>
+			  <li>Q-function and Value Function Learning</li>
+			  <li>Human-in-the-Loop and Feedback-Driven Methods</li>
+			  <li>Learning from Human Videos</li>
+			  <li>Continual Post-Training and Catastrophic Forgetting</li>
+			  <li>Real-Robot Evaluation and Deployment Constraints</li>
+			  <li>Robustness and Generalization under Distribution Shift</li>
+			  <li>Safety and Alignment in Robotics Post-Training</li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	</section>
+	
+
+	<hr class="half-rule"/>
+	<section id="organizers">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+
+		<span class=titlesec>Organizers</span>
+
+		<br><br>
+
+		<div class="row">
+			<a href='https://www.mit.edu/~abobu/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="../images/abobu.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://www.mit.edu/~abobu/">Andreea Bobu</a></p>
+				<p class=institution>MIT</p>
+			</div>
+			</a>
+
+			<a href='https://wagenmaker.github.io/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/andrew.png" class="figure-img img-fluid">
+				<p class="profname" style="white-space: nowrap;"><a href="https://wagenmaker.github.io/">Andrew Wagenmaker</a></p>
+				<p class=institution>UC Berkeley</p>
+			</div>
+			</a>
+
+			<a href='https://robodhruv.github.io/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/DhruvShah.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://robodhruv.github.io/">Dhruv Shah</a></p>
+				<p class=institution>Princeton University</p>
+			</div>
+			</a>
+			<a href='https://www.anushridixit.com/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/dixit.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://www.anushridixit.com/">Anushri Dixit</a></p>
+				<p class=institution>University of California, Los Angeles</p>
+			</div>
+			</a>
+		</div>
+
+		<div class="row">
+			<a href='https://hangzhaomit.github.io/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/hangzhao.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://hangzhaomit.github.io/">Hang Zhao</a></p>
+				<p class=institution>Tsinghua University</p>
+			</div>
+			</a>
+
+			<a href='https://msimchowitz.github.io/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/max.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://msimchowitz.github.io/">Max Simchowitz</a></p>
+				<p class=institution>Carnegie Mellon University</p>
+			</div>
+			</a>
+
+			<a href='https://shiduo-zhang.github.io/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/shiduo.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://shiduo-zhang.github.io/">Shiduo Zhang</a></p>
+				<p class=institution>Fudan University</p>
+			</div>
+			</a>
+			<a href='https://nicsefc.ee.tsinghua.edu.cn/people/ChaoYu'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/chaoyu.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://nicsefc.ee.tsinghua.edu.cn/people/ChaoYu">Chao Yu</a></p>
+				<p class=institution>Tsinghua University</p>
+			</div>
+			</a>
+		</div>
+
+		<div class="row">
+			
+
+			<a href='https://vitorguizilini.github.io/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/vitor.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://vitorguizilini.github.io/">Vitor Guizilini</a></p>
+				<p class=institution>Toyota Research Institute</p>
+			</div>
+			</a>
+
+			<a href='https://mrmoore98.github.io/liuyicheng/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/lyc.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://mrmoore98.github.io/liuyicheng/">Yicheng Liu</a></p>
+				<p class=institution>Tsinghua University</p>
+			</div>
+			</a>
+
+			<a href='https://yuewang.xyz/'>
+			<div class="profpic xlarge-1 columns">
+				<img src="images/yue.png" class="figure-img img-fluid">
+				<p class=profname><a href="https://yuewang.xyz/">Yue Wang</a></p>
+				<p class=institution>University of Southern California</p>
+			</div>
+			</a>
+		</div>
+
+		<div class="row">
+			
+
+			
+		</div>
+
+		<br>
+		<span class=titlesec>Industry Partners</span>
+		<br><br>
+		<div class="row" style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+			<a href="https://worldengine.ai/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+				<img src="images/worldengine.png" class="img-fluid" style="max-height: 150px;" alt="WorldEngine">
+			</a>
+			<a href="https://galaxea-dynamics.com/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+				<img src="images/galaxea.png" class="img-fluid" style="max-height: 150px;" alt="Galaxea">
+			</a>
+			<a href="https://www.tianjizn.com/en/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+				<img src="images/tianji.png" class="img-fluid" style="max-height: 150px;" alt="Tianji Robotics">
+			</a>
+			<a href="https://www.tri.global/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+				<img src="images/tri.png" class="img-fluid" style="max-height: 150px;" alt="Toyota Research Institute">
+			</a>
+		</div>
+
+		</div>
+</div>
+
+	</section>
+
+	<br>
+	<hr class="half-rule"/>
+	<section id="contact">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+		<span class=titlesec>Contact</span><br>
+		Reach out to Shiduo Zhang (<a href="mailto:sdzhang23@m.fudan.edu.cn">sdzhang23@m.fudan.edu.cn</a>) for any questions.
+	    </div>
+		</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js
+
+
+
+"> </script>
+
+	<!-- Custom JavaScript for this theme -->
+	<script src="js/scrolling-nav.js"></script>
+
+    </body>
+
+
+</html>
