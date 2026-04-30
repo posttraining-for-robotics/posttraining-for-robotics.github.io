@@ -606,6 +606,27 @@ li {
 .phase2-list { list-style: disc; padding-left: 22px; margin-bottom: 16px; }
 .phase2-list li { display: list-item; padding: 4px 0; }
 
+/* Tutorial card */
+.tutorial-card {
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #009688;
+    border-radius: 8px;
+    padding: 24px;
+    background: #fafafa;
+    margin: 8px 0 24px 0;
+}
+.tutorial-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.tutorial-card-header i { font-size: 1.8em; color: #009688; }
+.tutorial-card-header h5 { margin: 0; font-weight: 600; }
+.tutorial-card p { margin-bottom: 14px; }
+.tutorial-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.tutorial-actions .btn i { margin-right: 6px; }
+
 /* Schedule grid */
 .schedule-grid { margin-top: 8px; margin-bottom: 8px; }
 .schedule-grid h6 {

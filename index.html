@@ -56,8 +56,14 @@
 				<li class="nav-item">
 				    <a class="nav-link js-scroll-trigger" href="#about">About</a>
 				</li>
-				<li class="nav-item nav-item-cta">
-				    <a class="nav-link js-scroll-trigger" href="#challenge"><i class="bi bi-trophy-fill"></i> Challenge</a>
+				<li class="nav-item nav-item-cta dropdown">
+				    <a class="nav-link js-scroll-trigger dropdown-toggle" href="#challenge" id="challengeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-trophy-fill"></i> Challenge</a>
+				    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="challengeDropdown">
+					<a class="dropdown-item js-scroll-trigger" href="#challenge"><i class="bi bi-flag-fill"></i> Overview &amp; Tracks</a>
+					<a class="dropdown-item js-scroll-trigger" href="#challenge-dataset"><i class="bi bi-database-fill"></i> Dataset</a>
+					<a class="dropdown-item js-scroll-trigger" href="#challenge-tutorial"><i class="bi bi-journal-code"></i> Tutorial</a>
+					<a class="dropdown-item js-scroll-trigger" href="#challenge-registration"><i class="bi bi-pencil-square"></i> Registration</a>
+				    </div>
 				</li>
 				<li class="nav-item">
 				    <a class="nav-link js-scroll-trigger" href="#speakers">Speakers</a>
@@ -187,6 +193,21 @@
 			    </div>
 			    <p class="dataset-note">All four components are intended for <b>offline training</b> in Phase 1. Format, license, size, and download instructions will be announced.</p>
 			    <a href="#" class="btn btn-primary-outline disabled" aria-disabled="true">Download · coming soon</a>
+			</div>
+
+			<!-- Tutorial -->
+			<span class="subtitlesec" id="challenge-tutorial">Tutorial</span>
+			<div class="tutorial-card">
+			    <div class="tutorial-card-header">
+				<i class="bi bi-journal-code"></i>
+				<h5>How to Participate</h5>
+			    </div>
+			    <p>
+				Step-by-step instructions for joining the challenge — including environment setup, dataset access, baseline reproduction, evaluation protocol, and submission format — will be hosted in our GitHub repository. The repo will include reference code and starter scripts so teams can get up and running quickly.
+			    </p>
+			    <div class="tutorial-actions">
+				<a href="#" class="btn btn-primary-outline disabled" aria-disabled="true"><i class="bi bi-github"></i> GitHub repo · coming soon</a>
+			    </div>
 			</div>
 
 			<!-- Phase 2 -->
@@ -610,7 +631,11 @@
 	    var nav = document.getElementById('mainNav');
 	    if (!nav) return;
 	    var scrollLinks = document.querySelectorAll('a.js-scroll-trigger');
-	    var sections = ['about','challenge','speakers','schedule','topics','organizers'];
+	    // Sections used for active-link tracking (incl. challenge sub-anchors).
+	    var sections = ['about','challenge','challenge-dataset','challenge-tutorial','challenge-registration','speakers','schedule','topics','organizers'];
+	    // Sub-anchors that should also activate the parent "Challenge" dropdown toggle.
+	    var challengeAnchors = ['challenge','challenge-dataset','challenge-tutorial','challenge-registration'];
+	    var challengeToggle = document.getElementById('challengeDropdown');
 
 	    function onScroll() {
 		var y = window.pageYOffset || document.documentElement.scrollTop;
@@ -629,11 +654,17 @@
 		    var href = a.getAttribute('href') || '';
 		    a.classList.toggle('active', current && href === '#' + current);
 		});
+		// Keep parent Challenge toggle highlighted when any sub-anchor is current.
+		if (challengeToggle) {
+		    challengeToggle.classList.toggle('active', challengeAnchors.indexOf(current) !== -1);
+		}
 	    }
 
-	    // Smooth scroll for anchor links (offset by navbar height)
+	    // Smooth scroll for anchor links (offset by navbar height).
+	    // Skip dropdown-toggle so Bootstrap can open the menu normally.
 	    scrollLinks.forEach(function (a) {
 		a.addEventListener('click', function (e) {
+		    if (a.classList.contains('dropdown-toggle')) return;
 		    var href = a.getAttribute('href') || '';
 		    if (href.charAt(0) !== '#' || href.length < 2) return;
 		    var target = document.querySelector(href);
@@ -646,6 +677,11 @@
 		    var collapse = document.getElementById('navbarResponsive');
 		    if (collapse && collapse.classList.contains('show')) {
 			collapse.classList.remove('show');
+		    }
+		    // Close dropdown menu if open (when clicking a dropdown-item)
+		    var openDropdown = document.querySelector('.dropdown.show');
+		    if (openDropdown && window.jQuery) {
+			window.jQuery(openDropdown.querySelector('.dropdown-toggle')).dropdown('hide');
 		    }
 		});
 	    });

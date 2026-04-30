@@ -114,7 +114,8 @@ html { scroll-behavior: smooth; }
     font-weight: 600;
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
-#mainNav .nav-item-cta .nav-link:hover {
+#mainNav .nav-item-cta .nav-link:hover,
+#mainNav .nav-item-cta.show .nav-link {
     background: #009688;
     border-color: #009688;
     color: #fff;
@@ -122,6 +123,81 @@ html { scroll-behavior: smooth; }
 }
 #mainNav .nav-item-cta .nav-link::after { display: none; }
 #mainNav .nav-item-cta .nav-link i { margin-right: 4px; }
+#mainNav .nav-item-cta .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: 0.15em;
+    border-top-color: currentColor;
+}
+
+/* Dropdown menu — matches dark frosted nav */
+#mainNav .dropdown-menu {
+    background: rgba(18, 20, 24, 0.92);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 10px;
+    min-width: 220px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Desktop: open dropdown on hover, with a small invisible bridge so
+   the cursor can travel from toggle to menu without losing hover. */
+@media (min-width: 992px) {
+    #mainNav .dropdown:hover > .dropdown-menu,
+    #mainNav .dropdown.show > .dropdown-menu {
+        display: block;
+    }
+    #mainNav .dropdown-menu { margin-top: 6px; }
+    #mainNav .dropdown::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        right: 0;
+        height: 14px;
+        width: 220px;
+    }
+}
+#mainNav .dropdown-item {
+    color: #fff;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-size: 0.93em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+#mainNav .dropdown-item i {
+    color: #ffd166;
+    font-size: 1.05em;
+    width: 18px;
+    text-align: center;
+}
+#mainNav .dropdown-item:hover,
+#mainNav .dropdown-item:focus,
+#mainNav .dropdown-item.active {
+    background: rgba(0, 150, 136, 0.30);
+    color: #fff;
+}
+#mainNav .dropdown-item.active i { color: #ffd166; }
+
+/* Scrolled-state dropdown — light theme */
+#mainNav.scrolled .dropdown-menu {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 150, 136, 0.18);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+}
+#mainNav.scrolled .dropdown-item { color: #333; }
+#mainNav.scrolled .dropdown-item i { color: #009688; }
+#mainNav.scrolled .dropdown-item:hover,
+#mainNav.scrolled .dropdown-item:focus,
+#mainNav.scrolled .dropdown-item.active {
+    background: rgba(0, 150, 136, 0.10);
+    color: #009688;
+}
 
 /* Mobile toggler */
 #mainNav .navbar-toggler {
