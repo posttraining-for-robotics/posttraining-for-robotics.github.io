@@ -1,39 +1,202 @@
 /*!
- * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ * Custom Navbar — fixed-top with transparent → frosted-glass scroll transition
+ * Replaces the old Start Bootstrap scrolling-nav template styles.
  */
 
-.headercontainer {
-    max-height: 400px;
+/* Smooth-scrolling baseline */
+html { scroll-behavior: smooth; }
+
+/* Avatar circle (kept from prior template, used by .figure-img) */
+.figure-img { border-radius: 50%; }
+
+/* ------------------------------------------------------------------ */
+/*  Fixed-top Navbar                                                  */
+/* ------------------------------------------------------------------ */
+#mainNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    padding: 12px 0;
+    /* Black semi-transparent frosted bar */
+    background: rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
+    transition: background 0.35s ease, padding 0.25s ease,
+                box-shadow 0.35s ease, border-color 0.35s ease,
+                backdrop-filter 0.35s ease;
 }
 
-.figure-img {
-	border-radius: 50%;
+/* Initial state — dark frosted bar over the hero. Crisp white text. */
+#mainNav .navbar-brand,
+#mainNav .nav-link,
+#mainNav .navbar-toggler {
+    color: #fff;
+    transition: color 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+}
+#mainNav .navbar-brand,
+#mainNav .nav-link,
+#mainNav .brand-text,
+#mainNav .brand-text-sub { color: #ffffff; }
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active { color: #ffd166; }
+#mainNav .nav-item .nav-link::after { background: #ffd166; }
+#mainNav .brand-text-sub { opacity: 1; }
+
+/* Brand */
+#mainNav .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.05em;
+    letter-spacing: 0.01em;
+}
+#mainNav .navbar-brand:hover { text-decoration: none; opacity: 0.92; }
+#mainNav .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #009688 0%, #00796b 100%);
+    color: #fff;
+    font-size: 1.1em;
+    box-shadow: 0 2px 10px rgba(0, 150, 136, 0.35);
+}
+#mainNav .brand-text { line-height: 1.1; }
+#mainNav .brand-text-sub {
+    font-weight: 400;
+    opacity: 0.75;
+    margin-left: 2px;
 }
 
-.title-head {
-	font-size: 20px;
-	color: black;
+/* Nav links: subtle pill hover + active underline */
+#mainNav .navbar-nav { gap: 4px; }
+#mainNav .nav-item .nav-link {
+    position: relative;
+    padding: 8px 14px;
+    font-size: 0.95em;
+    font-weight: 500;
+    border-radius: 6px;
+}
+#mainNav .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 2px;
+    background: #009688;
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0.4);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+#mainNav .nav-item .nav-link:hover::after,
+#mainNav .nav-item .nav-link.active::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
-@media (min-width: 992px) {
-  header {
-    padding: 156px 0 100px;
-  }
+/* Challenge as a featured CTA pill */
+#mainNav .nav-item-cta .nav-link {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    padding: 7px 16px;
+    margin-left: 6px;
+    background: rgba(0, 150, 136, 0.18);
+    color: #fff;
+    font-weight: 600;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
-@media (max-width: 500px){
-  .title-head {
-	  display: None
-  }
+#mainNav .nav-item-cta .nav-link:hover {
+    background: #009688;
+    border-color: #009688;
+    color: #fff;
+    transform: translateY(-1px);
+}
+#mainNav .nav-item-cta .nav-link::after { display: none; }
+#mainNav .nav-item-cta .nav-link i { margin-right: 4px; }
+
+/* Mobile toggler */
+#mainNav .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+#mainNav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-section {
-  padding: 100px 0;
+/* ------------------------------------------------------------------ */
+/*  Scrolled state — frosted glass on white, dark text                */
+/* ------------------------------------------------------------------ */
+#mainNav.scrolled {
+    padding: 8px 0;
+    background: rgba(255, 255, 255, 0.92);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid rgba(0, 150, 136, 0.12);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+#mainNav.scrolled .navbar-brand,
+#mainNav.scrolled .nav-link,
+#mainNav.scrolled .navbar-toggler { text-shadow: none; }
+#mainNav.scrolled .navbar-brand,
+#mainNav.scrolled .brand-text,
+#mainNav.scrolled .brand-text-sub { color: #1a1a1a; }
+#mainNav.scrolled .brand-text-sub { color: #777; }
+#mainNav.scrolled .nav-link { color: #333; }
+#mainNav.scrolled .nav-link:hover,
+#mainNav.scrolled .nav-link.active { color: #009688; }
+#mainNav.scrolled .nav-item .nav-link::after { background: #009688; }
+
+#mainNav.scrolled .nav-item-cta .nav-link {
+    background: #009688;
+    border-color: #009688;
+    color: #fff;
+}
+#mainNav.scrolled .nav-item-cta .nav-link:hover {
+    background: #00796b;
+    border-color: #00796b;
 }
 
-#bgim {
-    width: 100vw;
-    min-height: 30vh;
-    max-height: 70vh;
+#mainNav.scrolled .navbar-toggler { border-color: rgba(0, 0, 0, 0.2); }
+#mainNav.scrolled .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------------ */
+/*  Mobile menu styling                                               */
+/* ------------------------------------------------------------------ */
+@media (max-width: 991px) {
+    #mainNav .navbar-collapse {
+        background: rgba(255, 255, 255, 0.97);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        margin-top: 8px;
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+    #mainNav .navbar-collapse .nav-link,
+    #mainNav .navbar-collapse .brand-text { color: #1a1a1a; }
+    #mainNav .navbar-collapse .nav-link:hover,
+    #mainNav .navbar-collapse .nav-link.active { color: #009688; }
+    #mainNav .navbar-collapse .nav-item-cta .nav-link {
+        background: #009688;
+        border-color: #009688;
+        color: #fff;
+        margin-top: 6px;
+    }
+    #mainNav .nav-item .nav-link::after { display: none; }
+}
+
+@media (max-width: 480px) {
+    #mainNav .brand-text-sub { display: none; }
 }

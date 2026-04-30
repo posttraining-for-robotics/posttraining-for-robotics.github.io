@@ -22,6 +22,7 @@
 
 
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 	<!-- Custom styles for this template -->
 
 
@@ -41,9 +42,12 @@
     <body id="page-top">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
+	<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
 	    <div class="container bar-container">
-		<a class="title-head" href="#page-top">Post-training for Robotics Foundation Models</a>
+		<a class="navbar-brand" href="#page-top">
+		    <span class="brand-mark"><i class="bi bi-cpu-fill"></i></span>
+		    <span class="brand-text">Post-training<span class="brand-text-sub"> · Robotics FM</span></span>
+		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		</button>
@@ -52,8 +56,8 @@
 				<li class="nav-item">
 				    <a class="nav-link js-scroll-trigger" href="#about">About</a>
 				</li>
-				<li class="nav-item">
-				    <a class="nav-link js-scroll-trigger" href="#challenge">Challenge</a>
+				<li class="nav-item nav-item-cta">
+				    <a class="nav-link js-scroll-trigger" href="#challenge"><i class="bi bi-trophy-fill"></i> Challenge</a>
 				</li>
 				<li class="nav-item">
 				    <a class="nav-link js-scroll-trigger" href="#speakers">Speakers</a>
@@ -72,17 +76,21 @@
 	    </div>
 	</nav>
 
-	<header class="headercontainer" style="padding: 0%; max-height: none; background-color: white;">
-	    <div style="background-color: rgba(160,160,160,0)" class="text-center">
-		<div style="padding-bottom: 6%; padding-top: 6%;">
-	    <div class="container titlebox"; style="display: inline-block; background-color:rgba(0,0,0, 0.7); width:auto; color: white;">
-		<p style="text-align: center; margin-bottom: 2" class="title">Post-training for Robotics Foundation Models</p>
-		<p style="text-align: center; margin-bottom: 0" class="subtitle">Workshop RSS 2026</p>
-		<!-- <p style="text-align: center; margin-bottom: 0" class="subtitle">Our paper submission is hosted on OpenReview. Here is the <a href="https://openreview.net/group?id=roboticsfoundation.org/RSS/2024/Workshop/SIHR">paper submission website</a></p> -->
-		<p style="text-align: center; margin-bottom: 0" class="subtitle">University of Technology Sydney</p>
-
+	<header id="hero" class="hero-section">
+	    <div class="hero-overlay"></div>
+	    <div class="container hero-content">
+		<div class="hero-eyebrow"><i class="bi bi-stars"></i> RSS 2026 Workshop &amp; Challenge</div>
+		<h1 class="hero-title">Post-training for Robotics Foundation Models</h1>
+		<div class="hero-slogan">From Pretrained Policies to Real-World Mastery.</div>
+		<div class="hero-meta">
+		    <span><i class="bi bi-geo-alt-fill"></i> University of Technology Sydney</span>
+		    <span class="hero-meta-sep">·</span>
+		    <span><i class="bi bi-calendar-event-fill"></i> July 2026</span>
 		</div>
-	    </div>
+		<div class="hero-cta">
+		    <a href="#challenge" class="btn btn-hero-primary"><i class="bi bi-trophy-fill"></i> Join the Challenge</a>
+		    <a href="#about" class="btn btn-hero-outline">Learn More</a>
+		</div>
 	    </div>
 	</header>
 
@@ -91,7 +99,7 @@
 	    <div class="container">
 		<div class="row">
 		    <div class="col-md-10 mx-auto">
-			<span class=titlesec>About</span>
+			<span class="titlesec"><i class="bi bi-info-circle-fill"></i> About</span>
 			<br>
 			<span>
 			Post-training is a crucial stage in robotics foundation model research: it enables robots to go beyond large-scale pretraining on expert demonstrations and further improve performance through their own interaction with the environment. By collecting interaction rollouts, distinguishing good and bad behaviors, and iteratively optimizing policies, post-training can substantially enhance precision, failure recovery, and generalization—bringing robotics foundation models closer to reliable real-world deployment.
@@ -111,15 +119,170 @@
 	    <div class="container">
 		<div class="row">
 		    <div class="col-md-10 mx-auto">
-			<span class=titlesec>Challenge</span>
+			<span class="titlesec"><i class="bi bi-trophy-fill"></i> Challenge</span>
 			<br>
-			<span>
-			During the challenge, we will first provide a high-quality, standardized real-robot bimanual manipulation dataset and use a standardized real-robot benchmark to evaluate participating teams in the first round. Based on the results, we will select a subset of teams and support them in conducting iterative policy inference. In the second round, selected teams can leverage the rollouts obtained from deploying their own policies to further improve their policies via post-training.
-			<br><br>
-			Team registration will open at a later stage.
-			<br><br>
-			<b>Challenge details coming soon.</b>
-			</span>
+			<p class="challenge-intro">
+			    The challenge is structured in two rounds. In <b>Phase 1</b>, all teams are evaluated on a standardized real-robot bimanual manipulation benchmark using a shared dataset. In <b>Phase 2</b>, the top teams are selected and supported in iterative rollout collection to further improve their policies via post-training.
+			</p>
+
+			<!-- Phase 1 Tracks -->
+			<span class="subtitlesec">Phase 1 — Evaluation Tracks</span>
+			<p class="challenge-caption">Phase 1 evaluates submitted policies on 3–5 standardized real-robot tasks across two ranking tracks. Teams perform <b>offline training</b> on the released dataset (expert data + baseline success and failure rollouts) and submit policies for benchmark evaluation.</p>
+			<div class="row tracks-row">
+			    <div class="col-md-6">
+				<div class="track-card">
+				    <div class="track-card-icon"><i class="bi bi-bar-chart-fill"></i></div>
+				    <h5>Single-Task Track</h5>
+				    <p>Policies are evaluated and ranked on each task independently. Best for specialists optimizing for individual task performance.</p>
+				</div>
+			    </div>
+			    <div class="col-md-6">
+				<div class="track-card">
+				    <div class="track-card-icon"><i class="bi bi-grid-3x3-gap-fill"></i></div>
+				    <h5>Multi-Task Track</h5>
+				    <p>A single policy is evaluated jointly across all tasks. Best for generalist policies that share representations across skills.</p>
+				</div>
+			    </div>
+			</div>
+
+			<!-- Dataset -->
+			<span class="subtitlesec" id="challenge-dataset">Dataset</span>
+			<p class="dataset-intro">
+			    For Phase 1, we release a standardized real-robot bimanual dataset designed for <b>offline training</b>. The dataset contains four complementary components:
+			</p>
+			<div class="dataset-card">
+			    <div class="dataset-card-header">
+				<i class="bi bi-database-fill"></i>
+				<h5>Standardized Real-Robot Bimanual Dataset</h5>
+			    </div>
+			    <div class="row dataset-components">
+				<div class="col-lg-3 col-md-6">
+				    <div class="dataset-component">
+					<div class="dataset-component-icon"><i class="bi bi-person-check-fill"></i></div>
+					<h6>Expert Data</h6>
+					<p>High-quality human teleoperation demonstrations on the benchmark tasks.</p>
+				    </div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+				    <div class="dataset-component">
+					<div class="dataset-component-icon success"><i class="bi bi-check-circle-fill"></i></div>
+					<h6>Baseline Success Rollouts</h6>
+					<p>Trajectories where a baseline policy successfully completed the task.</p>
+				    </div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+				    <div class="dataset-component">
+					<div class="dataset-component-icon failure"><i class="bi bi-x-circle-fill"></i></div>
+					<h6>Baseline Failure Rollouts</h6>
+					<p>Trajectories where the baseline policy failed — useful negative signal for post-training.</p>
+				    </div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+				    <div class="dataset-component">
+					<div class="dataset-component-icon hitl"><i class="bi bi-person-raised-hand"></i></div>
+					<h6>Human-in-the-Loop Data</h6>
+					<p>Human interventions, corrections, and preference labels collected during baseline rollouts.</p>
+				    </div>
+				</div>
+			    </div>
+			    <p class="dataset-note">All four components are intended for <b>offline training</b> in Phase 1. Format, license, size, and download instructions will be announced.</p>
+			    <a href="#" class="btn btn-primary-outline disabled" aria-disabled="true">Download · coming soon</a>
+			</div>
+
+			<!-- Phase 2 -->
+			<span class="subtitlesec">Phase 2 — Iterative Improvement</span>
+			<p>
+			    Based on Phase 1 results, the top 3 teams advance to Phase 2. During this round, selected teams collect rollouts by deploying their own policies and use those rollouts to further improve performance via post-training.
+			</p>
+			<ul class="phase2-list">
+			    <li>Top 3 teams selected from Phase 1 ranking</li>
+			    <li>Iterative rollout collection supported by the organizers</li>
+			    <li>Final policies presented at the workshop @ RSS 2026</li>
+			</ul>
+
+			<!-- Schedule -->
+			<span class="subtitlesec">Schedule</span>
+			<div class="row schedule-grid">
+			    <div class="col-md-6">
+				<h6><i class="bi bi-calendar-event"></i> Key Dates</h6>
+				<div class="timeline-vertical">
+				    <div class="timeline-event highlight">
+					<div class="timeline-date">Now → May 20, 2026</div>
+					<div class="timeline-content">Team registration open</div>
+				    </div>
+				    <div class="timeline-event">
+					<div class="timeline-date">Now → May 30, 2026</div>
+					<div class="timeline-content">Phase 1 evaluation window</div>
+				    </div>
+				    <div class="timeline-event">
+					<div class="timeline-date">Early June, 2026</div>
+					<div class="timeline-content">Top 3 teams announced</div>
+				    </div>
+				    <div class="timeline-event">
+					<div class="timeline-date">June 1 – 28, 2026</div>
+					<div class="timeline-content">Phase 2 iterative improvement</div>
+				    </div>
+				    <div class="timeline-event">
+					<div class="timeline-date">July, 2026</div>
+					<div class="timeline-content">Workshop @ RSS — team reports & panel</div>
+				    </div>
+				</div>
+			    </div>
+			    <div class="col-md-6">
+				<h6><i class="bi bi-list-check"></i> Phases</h6>
+				<ul class="phase-list">
+				    <li><strong>Registration</strong> — team sign-up and track selection</li>
+				    <li><strong>Phase 1: Ranking</strong> — single-task & multi-task evaluation</li>
+				    <li><strong>Phase 2: Iterative Improvement</strong> — top 3 teams</li>
+				    <li><strong>Workshop @ RSS</strong> — team presentations and panel discussion</li>
+				</ul>
+			    </div>
+			</div>
+
+			<!-- Awards -->
+			<span class="subtitlesec">Awards</span>
+			<div class="prize-banner">
+			    <span class="prize-icon">💰</span>
+			    <span class="prize-amount">$20,000+</span>
+			    <span class="prize-label">Total Prize Pool</span>
+			</div>
+			<div class="row awards-grid">
+			    <div class="col-md-3 col-6">
+				<div class="award-card gold">
+				    <div class="award-medal">🥇</div>
+				    <div class="award-rank">1st Place</div>
+				    <div class="award-amount">$5,000</div>
+				</div>
+			    </div>
+			    <div class="col-md-3 col-6">
+				<div class="award-card silver">
+				    <div class="award-medal">🥈</div>
+				    <div class="award-rank">2nd Place</div>
+				    <div class="award-amount">$3,000</div>
+				</div>
+			    </div>
+			    <div class="col-md-3 col-6">
+				<div class="award-card bronze">
+				    <div class="award-medal">🥉</div>
+				    <div class="award-rank">3rd Place</div>
+				    <div class="award-amount">$2,000</div>
+				</div>
+			    </div>
+			    <div class="col-md-3 col-6">
+				<div class="award-card honorable">
+				    <div class="award-medal">🏅</div>
+				    <div class="award-rank">4th – 10th</div>
+				    <div class="award-amount">$500 <span class="award-each">each</span></div>
+				</div>
+			    </div>
+			</div>
+
+			<!-- Registration -->
+			<span class="subtitlesec" id="challenge-registration">Registration</span>
+			<p>
+			    Team registration will open soon. The registration form and submission instructions will be linked here once available.
+			</p>
+			<a href="#" class="btn btn-primary-outline disabled" aria-disabled="true">Register · coming soon</a>
 		    </div>
 		</div>
 	    </div>
@@ -133,7 +296,7 @@
 		    <div class="col-md-10 mx-auto">
 
 		<!-- <span class=titlesec>Speakers and Panelists</span> -->
-		<span class=titlesec>Invited Speakers</span>
+		<span class="titlesec"><i class="bi bi-mic-fill"></i> Invited Speakers</span>
 
 		<br><br>
 
@@ -175,7 +338,7 @@
 	    <div class="container" id="schedule">
 		<div class="row">
 		    <div class="col-md-10 mx-auto">
-			<span class="titlesec"><span></span>Schedule</span>
+			<span class="titlesec"><i class="bi bi-clock-fill"></i> Schedule</span>
 			<br><br>
 			<table class="table table-striped">
 				<tbody>
@@ -215,19 +378,64 @@
 	  <div class="container">
 		<div class="row">
 		  <div class="col-md-10 mx-auto">
-			<span class="titlesec">Discussion Topics</span><br>
-			<p>Discussion topics for this workshop include, but are not limited to:</p>
-			<ul>
-			  <li>Post-Training Paradigms for Robotics Foundation Models</li>
-			  <li>Efficient Post-Training System Design</li>
-			  <li>Q-function and Value Function Learning</li>
-			  <li>Human-in-the-Loop and Feedback-Driven Methods</li>
-			  <li>Learning from Human Videos</li>
-			  <li>Continual Post-Training and Catastrophic Forgetting</li>
-			  <li>Real-Robot Evaluation and Deployment Constraints</li>
-			  <li>Robustness and Generalization under Distribution Shift</li>
-			  <li>Safety and Alignment in Robotics Post-Training</li>
-			</ul>
+			<span class="titlesec"><i class="bi bi-chat-square-text-fill"></i> Discussion Topics</span><br>
+			<p class="topics-intro">Discussion topics for this workshop include, but are not limited to:</p>
+			<div class="row topics-grid">
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-cpu-fill"></i>
+				    <span>Post-Training Paradigms for Robotics Foundation Models</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-gear-fill"></i>
+				    <span>Efficient Post-Training System Design</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-graph-up-arrow"></i>
+				    <span>Q-function and Value Function Learning</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-person-raised-hand"></i>
+				    <span>Human-in-the-Loop and Feedback-Driven Methods</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-camera-reels-fill"></i>
+				    <span>Learning from Human Videos</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-arrow-repeat"></i>
+				    <span>Continual Post-Training and Catastrophic Forgetting</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-robot"></i>
+				    <span>Real-Robot Evaluation and Deployment Constraints</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-shield-check"></i>
+				    <span>Robustness and Generalization under Distribution Shift</span>
+				</div>
+			    </div>
+			    <div class="col-md-4 col-sm-6">
+				<div class="topic-card">
+				    <i class="bi bi-shield-fill-check"></i>
+				    <span>Safety and Alignment in Robotics Post-Training</span>
+				</div>
+			    </div>
+			</div>
 		  </div>
 		</div>
 	  </div>
@@ -240,7 +448,7 @@
 		<div class="row">
 		    <div class="col-md-10 mx-auto">
 
-		<span class=titlesec>Organizers</span>
+		<span class="titlesec"><i class="bi bi-people-fill"></i> Organizers</span>
 
 		<br><br>
 
@@ -345,19 +553,19 @@
 		</div>
 
 		<br>
-		<span class=titlesec>Industry Partners</span>
+		<span class="titlesec"><i class="bi bi-building"></i> Industry Partners</span>
 		<br><br>
 		<div class="row" style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
-			<a href="https://worldengine.ai/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+			<a href="https://worldengine.ai/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
 				<img src="images/worldengine.png" class="img-fluid" style="max-height: 150px;" alt="WorldEngine">
 			</a>
-			<a href="https://galaxea-dynamics.com/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+			<a href="https://galaxea-dynamics.com/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
 				<img src="images/galaxea.png" class="img-fluid" style="max-height: 150px;" alt="Galaxea">
 			</a>
-			<a href="https://www.tianjizn.com/en/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+			<a href="https://www.tianjizn.com/en/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
 				<img src="images/tianji.png" class="img-fluid" style="max-height: 150px;" alt="Tianji Robotics">
 			</a>
-			<a href="https://www.tri.global/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;">
+			<a href="https://www.tri.global/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
 				<img src="images/tri.png" class="img-fluid" style="max-height: 150px;" alt="Toyota Research Institute">
 			</a>
 		</div>
@@ -373,8 +581,14 @@
 	    <div class="container">
 		<div class="row">
 		    <div class="col-md-10 mx-auto">
-		<span class=titlesec>Contact</span><br>
-		Reach out to Shiduo Zhang (<a href="mailto:sdzhang23@m.fudan.edu.cn">sdzhang23@m.fudan.edu.cn</a>) for any questions.
+		<span class="titlesec"><i class="bi bi-envelope-fill"></i> Contact</span>
+		<div class="contact-card">
+		    <i class="bi bi-envelope-paper-fill contact-icon"></i>
+		    <div class="contact-body">
+			<p>For any questions about the workshop or the challenge, please reach out to:</p>
+			<p class="contact-person"><b>Shiduo Zhang</b> · <a href="mailto:sdzhang23@m.fudan.edu.cn">sdzhang23@m.fudan.edu.cn</a></p>
+		    </div>
+		</div>
 	    </div>
 		</div>
 		</div>
@@ -389,6 +603,57 @@
 
 	<!-- Custom JavaScript for this theme -->
 	<script src="js/scrolling-nav.js"></script>
+
+	<!-- Navbar: scroll state + smooth-scroll + active link tracking -->
+	<script>
+	(function () {
+	    var nav = document.getElementById('mainNav');
+	    if (!nav) return;
+	    var scrollLinks = document.querySelectorAll('a.js-scroll-trigger');
+	    var sections = ['about','challenge','speakers','schedule','topics','organizers'];
+
+	    function onScroll() {
+		var y = window.pageYOffset || document.documentElement.scrollTop;
+		nav.classList.toggle('scrolled', y > 60);
+
+		// Active link tracking
+		var current = null;
+		var navHeight = nav.offsetHeight + 20;
+		for (var i = 0; i < sections.length; i++) {
+		    var el = document.getElementById(sections[i]);
+		    if (!el) continue;
+		    var top = el.getBoundingClientRect().top;
+		    if (top - navHeight <= 0) current = sections[i];
+		}
+		scrollLinks.forEach(function (a) {
+		    var href = a.getAttribute('href') || '';
+		    a.classList.toggle('active', current && href === '#' + current);
+		});
+	    }
+
+	    // Smooth scroll for anchor links (offset by navbar height)
+	    scrollLinks.forEach(function (a) {
+		a.addEventListener('click', function (e) {
+		    var href = a.getAttribute('href') || '';
+		    if (href.charAt(0) !== '#' || href.length < 2) return;
+		    var target = document.querySelector(href);
+		    if (!target) return;
+		    e.preventDefault();
+		    var top = target.getBoundingClientRect().top + window.pageYOffset - nav.offsetHeight + 1;
+		    window.scrollTo({ top: top, behavior: 'smooth' });
+
+		    // Close mobile menu if open
+		    var collapse = document.getElementById('navbarResponsive');
+		    if (collapse && collapse.classList.contains('show')) {
+			collapse.classList.remove('show');
+		    }
+		});
+	    });
+
+	    window.addEventListener('scroll', onScroll, { passive: true });
+	    onScroll();
+	})();
+	</script>
 
     </body>
 
