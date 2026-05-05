@@ -62,6 +62,7 @@
 					<a class="dropdown-item js-scroll-trigger" href="#challenge"><i class="bi bi-flag-fill"></i> Overview &amp; Tracks</a>
 					<a class="dropdown-item js-scroll-trigger" href="#challenge-dataset"><i class="bi bi-database-fill"></i> Dataset</a>
 					<a class="dropdown-item js-scroll-trigger" href="#challenge-tutorial"><i class="bi bi-journal-code"></i> Tutorial</a>
+					<a class="dropdown-item js-scroll-trigger" href="#challenge-leaderboard"><i class="bi bi-bar-chart-line-fill"></i> Leaderboard</a>
 					<a class="dropdown-item js-scroll-trigger" href="#challenge-registration"><i class="bi bi-pencil-square"></i> Registration</a>
 				    </div>
 				</li>
@@ -91,7 +92,7 @@
 		<div class="hero-meta">
 		    <span><i class="bi bi-geo-alt-fill"></i> University of Technology Sydney</span>
 		    <span class="hero-meta-sep">·</span>
-		    <span><i class="bi bi-calendar-event-fill"></i> July 2026</span>
+		    <span><i class="bi bi-calendar-event-fill"></i> July 13 2026</span>
 		</div>
 		<div class="hero-cta">
 		    <a href="#challenge" class="btn btn-hero-primary"><i class="bi bi-trophy-fill"></i> Join the Challenge</a>
@@ -191,8 +192,8 @@
 				    </div>
 				</div>
 			    </div>
-			    <p class="dataset-note">All four components are intended for <b>offline training</b> in Phase 1. Format, license, size, and download instructions will be announced.</p>
-			    <a href="#" class="btn btn-primary-outline disabled" aria-disabled="true">Download · coming soon</a>
+			    <p class="dataset-note">All four components are intended for <b>offline training</b> in Phase 1. Hosted on Hugging Face Datasets.</p>
+			    <a href="https://huggingface.co/datasets/Posttraining-RFM-RSS2026/Challenge-phase1-dataset" class="btn-primary-solid" target="_blank" rel="noopener"><i class="bi bi-cloud-download-fill"></i> Download on Hugging Face</a>
 			</div>
 
 			<!-- Tutorial -->
@@ -232,7 +233,7 @@
 					<div class="timeline-content">Team registration open</div>
 				    </div>
 				    <div class="timeline-event">
-					<div class="timeline-date">Now → May 30, 2026</div>
+					<div class="timeline-date">Now → June 10, 2026</div>
 					<div class="timeline-content">Phase 1 evaluation window</div>
 				    </div>
 				    <div class="timeline-event">
@@ -240,7 +241,7 @@
 					<div class="timeline-content">Top 3 teams announced</div>
 				    </div>
 				    <div class="timeline-event">
-					<div class="timeline-date">June 1 – 28, 2026</div>
+					<div class="timeline-date">June 10 – 30, 2026</div>
 					<div class="timeline-content">Phase 2 iterative improvement</div>
 				    </div>
 				    <div class="timeline-event">
@@ -298,12 +299,110 @@
 			    </div>
 			</div>
 
+			<!-- Leaderboard -->
+			<span class="subtitlesec" id="challenge-leaderboard">Leaderboard</span>
+			<div class="leaderboard-banner">
+			    <i class="bi bi-bar-chart-line-fill"></i>
+			    <div>
+				Phase 1 evaluation results across both tracks. The <code>pi05</code> baseline is provided as a reference; team submissions will populate the table during the evaluation window.
+			    </div>
+			</div>
+
+			<!-- Track switcher (Single-Task / Multi-Task) -->
+			<div class="lb-tabs" role="tablist" aria-label="Leaderboard track switcher">
+			    <button type="button" class="lb-tab active" data-lb-tab="single" role="tab" aria-selected="true" aria-controls="lb-pane-single">
+				<i class="bi bi-bullseye"></i> Single-Task <span class="lb-tab-sub">(Specialist)</span>
+			    </button>
+			    <button type="button" class="lb-tab" data-lb-tab="multi" role="tab" aria-selected="false" aria-controls="lb-pane-multi">
+				<i class="bi bi-grid-3x3-gap-fill"></i> Multi-Task <span class="lb-tab-sub">(Generalist)</span>
+			    </button>
+			</div>
+
+			<!-- Single-Task (Specialist) -->
+			<div class="lb-pane active" id="lb-pane-single" role="tabpanel" data-lb-pane="single">
+			    <div class="leaderboard-wrapper">
+				<table class="leaderboard-table">
+				    <thead>
+					<tr>
+					    <th rowspan="2" class="lb-rank">#</th>
+					    <th rowspan="2" class="lb-team">Team / Model</th>
+					    <th colspan="2" class="lb-task lb-task-1"><code>insert-mouse-battery</code></th>
+					    <th colspan="2" class="lb-task lb-task-2"><code>tower-of-hanoi-game</code></th>
+					    <th colspan="2" class="lb-task lb-task-3"><code>seal-water-bottle-cap</code></th>
+					    <th colspan="2" class="lb-avg">Average</th>
+					</tr>
+					<tr class="lb-metric-row">
+					    <th>Score</th><th>SR</th>
+					    <th>Score</th><th>SR</th>
+					    <th>Score</th><th>SR</th>
+					    <th>Score</th><th>SR</th>
+					</tr>
+				    </thead>
+				    <tbody>
+					<tr class="lb-row">
+					    <td class="lb-rank-cell">—</td>
+					    <td class="lb-team-cell">
+						<div class="lb-team-name">Baseline</div>
+						<div class="lb-model-name">pi05</div>
+					    </td>
+					    <td>87</td><td>80%</td>
+					    <td>47</td><td>45%</td>
+					    <td>47</td><td>35%</td>
+					    <td class="lb-avg-score">60.3</td><td class="lb-avg-sr">53.3%</td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			</div>
+
+			<!-- Multi-Task (Generalist) -->
+			<div class="lb-pane" id="lb-pane-multi" role="tabpanel" data-lb-pane="multi" hidden>
+			    <div class="leaderboard-wrapper">
+				<table class="leaderboard-table">
+				    <thead>
+					<tr>
+					    <th rowspan="2" class="lb-rank">#</th>
+					    <th rowspan="2" class="lb-team">Team / Model</th>
+					    <th colspan="2" class="lb-task lb-task-1"><code>insert-mouse-battery</code></th>
+					    <th colspan="2" class="lb-task lb-task-2"><code>tower-of-hanoi-game</code></th>
+					    <th colspan="2" class="lb-task lb-task-3"><code>seal-water-bottle-cap</code></th>
+					    <th colspan="2" class="lb-avg">Average</th>
+					</tr>
+					<tr class="lb-metric-row">
+					    <th>Score</th><th>SR</th>
+					    <th>Score</th><th>SR</th>
+					    <th>Score</th><th>SR</th>
+					    <th>Score</th><th>SR</th>
+					</tr>
+				    </thead>
+				    <tbody>
+					<tr class="lb-row">
+					    <td class="lb-rank-cell">—</td>
+					    <td class="lb-team-cell">
+						<div class="lb-team-name">Baseline</div>
+						<div class="lb-model-name">pi05</div>
+					    </td>
+					    <td>—</td><td>—</td>
+					    <td>—</td><td>—</td>
+					    <td>—</td><td>—</td>
+					    <td class="lb-avg-score">—</td><td class="lb-avg-sr">—</td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			</div>
+
+			<p class="leaderboard-note">
+			    <i class="bi bi-info-circle"></i>
+			    <b>Score</b>: progress score per task (higher is better). <b>SR</b>: success rate over rollouts. The final ranking uses the <b>Average</b> column.
+			</p>
+
 			<!-- Registration -->
 			<span class="subtitlesec" id="challenge-registration">Registration</span>
 			<p>
-			    Team registration will open soon. The registration form and submission instructions will be linked here once available.
+			    Team registration is now open. Please fill in the Google Form below with your team information and track preference. Submission instructions will be shared with registered teams.
 			</p>
-			<a href="#" class="btn btn-primary-outline disabled" aria-disabled="true">Register · coming soon</a>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLScbJXL1f7EVHXrvKwiIizwUnRsA9hy7gI5BvolDimU4v3lxVg/viewform?usp=dialog" class="btn-primary-solid" target="_blank" rel="noopener"><i class="bi bi-pencil-square"></i> Register your team</a>
 		    </div>
 		</div>
 	    </div>
@@ -632,9 +731,9 @@
 	    if (!nav) return;
 	    var scrollLinks = document.querySelectorAll('a.js-scroll-trigger');
 	    // Sections used for active-link tracking (incl. challenge sub-anchors).
-	    var sections = ['about','challenge','challenge-dataset','challenge-tutorial','challenge-registration','speakers','schedule','topics','organizers'];
+	    var sections = ['about','challenge','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration','speakers','schedule','topics','organizers'];
 	    // Sub-anchors that should also activate the parent "Challenge" dropdown toggle.
-	    var challengeAnchors = ['challenge','challenge-dataset','challenge-tutorial','challenge-registration'];
+	    var challengeAnchors = ['challenge','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration'];
 	    var challengeToggle = document.getElementById('challengeDropdown');
 
 	    function onScroll() {
@@ -688,6 +787,29 @@
 
 	    window.addEventListener('scroll', onScroll, { passive: true });
 	    onScroll();
+	})();
+	</script>
+
+	<!-- Leaderboard track switcher -->
+	<script>
+	(function () {
+	    var tabs = document.querySelectorAll('.lb-tab');
+	    if (!tabs.length) return;
+	    tabs.forEach(function (tab) {
+		tab.addEventListener('click', function () {
+		    var key = tab.getAttribute('data-lb-tab');
+		    tabs.forEach(function (t) {
+			var on = t === tab;
+			t.classList.toggle('active', on);
+			t.setAttribute('aria-selected', on ? 'true' : 'false');
+		    });
+		    document.querySelectorAll('.lb-pane').forEach(function (pane) {
+			var on = pane.getAttribute('data-lb-pane') === key;
+			pane.classList.toggle('active', on);
+			if (on) { pane.removeAttribute('hidden'); } else { pane.setAttribute('hidden', ''); }
+		    });
+		});
+	    });
 	})();
 	</script>
 
