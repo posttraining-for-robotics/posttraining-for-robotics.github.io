@@ -60,6 +60,7 @@
 				    <a class="nav-link js-scroll-trigger dropdown-toggle" href="#challenge" id="challengeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-trophy-fill"></i> Challenge</a>
 				    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="challengeDropdown">
 					<a class="dropdown-item js-scroll-trigger" href="#challenge"><i class="bi bi-flag-fill"></i> Overview &amp; Tracks</a>
+					<a class="dropdown-item js-scroll-trigger" href="#challenge-tasks"><i class="bi bi-camera-video-fill"></i> Tasks &amp; Scoring</a>
 					<a class="dropdown-item js-scroll-trigger" href="#challenge-dataset"><i class="bi bi-database-fill"></i> Dataset</a>
 					<a class="dropdown-item js-scroll-trigger" href="#challenge-tutorial"><i class="bi bi-journal-code"></i> Tutorial</a>
 					<a class="dropdown-item js-scroll-trigger" href="#challenge-leaderboard"><i class="bi bi-bar-chart-line-fill"></i> Leaderboard</a>
@@ -152,6 +153,215 @@
 			    </div>
 			</div>
 
+			<!-- Task Samples & Scoring -->
+			<span class="subtitlesec" id="challenge-tasks">Task Samples &amp; Scoring</span>
+			<p class="tasks-intro">
+			    Phase 1 includes three real-robot bimanual manipulation tasks. Select a task below to view a sample rollout video and its scoring criteria.
+			</p>
+			<div class="task-selector-wrapper">
+			    <div class="task-tabs" role="tablist" aria-label="Task selector">
+				<button type="button" class="task-tab active" data-task-tab="insert-mouse-battery" role="tab" aria-selected="true" aria-controls="task-pane-mouse">
+				    <span class="task-tab-num">1</span>
+				    <code>insert-mouse-battery</code>
+				</button>
+				<button type="button" class="task-tab" data-task-tab="tower-of-hanoi-game" role="tab" aria-selected="false" aria-controls="task-pane-hanoi">
+				    <span class="task-tab-num">2</span>
+				    <code>tower-of-hanoi-game</code>
+				</button>
+				<button type="button" class="task-tab" data-task-tab="seal-water-bottle-cap" role="tab" aria-selected="false" aria-controls="task-pane-bottle">
+				    <span class="task-tab-num">3</span>
+				    <code>seal-water-bottle-cap</code>
+				</button>
+			    </div>
+
+			    <!-- Task 1: insert-mouse-battery -->
+			    <div class="task-pane active" id="task-pane-mouse" role="tabpanel" data-task-pane="insert-mouse-battery">
+				<div class="task-criteria">
+				    <h6><i class="bi bi-clipboard-check-fill"></i> Scoring Criteria · <code>insert-mouse-battery</code></h6>
+				    <ul class="criteria-list">
+					<li>
+					    <span class="criteria-text">Place the mouse in the center of the table with the battery slot facing right.</span>
+					    <span class="badge-group">
+						<span class="score-badge">+0.4</span>
+						<!-- <span class="cumulative">total 0.4</span> -->
+					    </span>
+					</li>
+					<li>
+					    <span class="criteria-text">Insert the battery in the correct polarity, but not fully inserted.</span>
+					    <span class="badge-group">
+						<span class="score-badge">+0.4</span>
+						<!-- <span class="cumulative">total 0.8</span> -->
+					    </span>
+					</li>
+					<li>
+					    <span class="criteria-text">Battery is fully inserted.</span>
+					    <span class="badge-group">
+						<span class="score-badge">+0.2</span>
+						<!-- <span class="cumulative">total 1.0</span> -->
+					    </span>
+					</li>
+				    </ul>
+				    <div class="criteria-notice">
+					<i class="bi bi-info-circle-fill"></i>
+					<span>Steps are cumulative — completing the final step yields a total score of <b>1.0</b>.</span>
+				    </div>
+				</div>
+				<div class="row task-videos-row">
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-arrow-left-circle-fill"></i> Left wrist</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/insert-mouse-battery-left.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-camera-fill"></i> Top</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/insert-mouse-battery-top.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-arrow-right-circle-fill"></i> Right wrist</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/insert-mouse-battery-right.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				</div>
+			    </div>
+
+			    <!-- Task 2: tower-of-hanoi-game -->
+			    <div class="task-pane" id="task-pane-hanoi" role="tabpanel" data-task-pane="tower-of-hanoi-game" hidden>
+				<div class="task-criteria">
+				    <h6><i class="bi bi-clipboard-check-fill"></i> Scoring Criteria · <code>tower-of-hanoi-game</code></h6>
+				    <ul class="criteria-list">
+					<li>
+					    <span class="criteria-text">Successfully place the small ring onto the opposite peg.</span>
+					    <span class="badge-group">
+						<span class="score-badge">+0.3</span>
+					    </span>
+					</li>
+					<li>
+					    <span class="criteria-text">Successfully place the large ring onto the middle peg.</span>
+					    <span class="badge-group">
+						<span class="score-badge">+0.3</span>
+					    </span>
+					</li>
+					<li>
+					    <span class="criteria-text">Successfully place the small ring onto the middle peg and stack it on top of the large ring.</span>
+					    <span class="badge-group">
+						<span class="score-badge">+0.4</span>
+					    </span>
+					</li>
+				    </ul>
+				    <div class="criteria-notice">
+					<i class="bi bi-info-circle-fill"></i>
+					<span>As long as the final configuration has the large ring on the bottom and the small ring on top, the score will be counted as <b>1.0</b>.</span>
+				    </div>
+				</div>
+				<div class="row task-videos-row">
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-arrow-left-circle-fill"></i> Left wrist</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/tower-of-hanoi-game-left.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-camera-fill"></i> Top</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/tower-of-hanoi-game-top.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-arrow-right-circle-fill"></i> Right wrist</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/tower-of-hanoi-game-right.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				</div>
+			    </div>
+
+			    <!-- Task 3: seal-water-bottle-cap -->
+			    <div class="task-pane" id="task-pane-bottle" role="tabpanel" data-task-pane="seal-water-bottle-cap" hidden>
+				<div class="task-criteria">
+				    <h6><i class="bi bi-clipboard-check-fill"></i> Scoring Criteria · <code>seal-water-bottle-cap</code></h6>
+				    <ul class="criteria-list">
+					<li>
+					    <span class="criteria-text">Insert the straw of the bottle cap into the bottle and place the cap onto the bottle.</span>
+					    <span class="badge-group">
+						<span class="score-badge">+0.5</span>
+					    </span>
+					</li>
+					<li>
+					    <span class="criteria-text">Tighten the cap — score scales with how firmly it is fastened.</span>
+					    <span class="badge-group">
+						<span class="score-badge graduated">+0 → +0.5</span>
+						<span class="cumulative">final 0.5 – 1.0</span>
+					    </span>
+					</li>
+				    </ul>
+				    <div class="criteria-notice">
+					<i class="bi bi-info-circle-fill"></i>
+					<span>The tightening score is graduated based on the number of turns the robot makes. A final score of <b>1.0</b> indicates the cap is fully tightened.</span>
+				    </div>
+				</div>
+				<div class="row task-videos-row">
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-arrow-left-circle-fill"></i> Left wrist</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/seal-water-bottle-cap-left.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-camera-fill"></i> Top</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/seal-water-bottle-cap-top.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				    <div class="col-md-4">
+					<div class="task-video-card">
+					    <div class="task-video-label"><i class="bi bi-arrow-right-circle-fill"></i> Right wrist</div>
+					    <div class="task-video-container">
+						<video controls muted loop playsinline preload="metadata">
+						    <source src="videos/seal-water-bottle-cap-right.mp4" type="video/mp4">
+						</video>
+					    </div>
+					</div>
+				    </div>
+				</div>
+			    </div>
+			</div>
+
 			<!-- Dataset -->
 			<span class="subtitlesec" id="challenge-dataset">Dataset</span>
 			<p class="dataset-intro">
@@ -229,7 +439,7 @@
 				<h6><i class="bi bi-calendar-event"></i> Key Dates</h6>
 				<div class="timeline-vertical">
 				    <div class="timeline-event highlight">
-					<div class="timeline-date">Now → May 20, 2026</div>
+					<div class="timeline-date">Now → May 31, 2026</div>
 					<div class="timeline-content">Team registration open</div>
 				    </div>
 				    <div class="timeline-event">
@@ -731,9 +941,9 @@
 	    if (!nav) return;
 	    var scrollLinks = document.querySelectorAll('a.js-scroll-trigger');
 	    // Sections used for active-link tracking (incl. challenge sub-anchors).
-	    var sections = ['about','challenge','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration','speakers','schedule','topics','organizers'];
+	    var sections = ['about','challenge','challenge-tasks','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration','speakers','schedule','topics','organizers'];
 	    // Sub-anchors that should also activate the parent "Challenge" dropdown toggle.
-	    var challengeAnchors = ['challenge','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration'];
+	    var challengeAnchors = ['challenge','challenge-tasks','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration'];
 	    var challengeToggle = document.getElementById('challengeDropdown');
 
 	    function onScroll() {
@@ -790,26 +1000,30 @@
 	})();
 	</script>
 
-	<!-- Leaderboard track switcher -->
+	<!-- Leaderboard track switcher + Task selector switcher -->
 	<script>
 	(function () {
-	    var tabs = document.querySelectorAll('.lb-tab');
-	    if (!tabs.length) return;
-	    tabs.forEach(function (tab) {
-		tab.addEventListener('click', function () {
-		    var key = tab.getAttribute('data-lb-tab');
-		    tabs.forEach(function (t) {
-			var on = t === tab;
-			t.classList.toggle('active', on);
-			t.setAttribute('aria-selected', on ? 'true' : 'false');
-		    });
-		    document.querySelectorAll('.lb-pane').forEach(function (pane) {
-			var on = pane.getAttribute('data-lb-pane') === key;
-			pane.classList.toggle('active', on);
-			if (on) { pane.removeAttribute('hidden'); } else { pane.setAttribute('hidden', ''); }
+	    function wireTabs(tabClass, tabAttr, paneClass, paneAttr) {
+		var tabs = document.querySelectorAll(tabClass);
+		if (!tabs.length) return;
+		tabs.forEach(function (tab) {
+		    tab.addEventListener('click', function () {
+			var key = tab.getAttribute(tabAttr);
+			tabs.forEach(function (t) {
+			    var on = t === tab;
+			    t.classList.toggle('active', on);
+			    t.setAttribute('aria-selected', on ? 'true' : 'false');
+			});
+			document.querySelectorAll(paneClass).forEach(function (pane) {
+			    var on = pane.getAttribute(paneAttr) === key;
+			    pane.classList.toggle('active', on);
+			    if (on) { pane.removeAttribute('hidden'); } else { pane.setAttribute('hidden', ''); }
+			});
 		    });
 		});
-	    });
+	    }
+	    wireTabs('.lb-tab', 'data-lb-tab', '.lb-pane', 'data-lb-pane');
+	    wireTabs('.task-tab', 'data-task-tab', '.task-pane', 'data-task-pane');
 	})();
 	</script>
 
