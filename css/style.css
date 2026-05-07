@@ -1105,14 +1105,25 @@ li {
 }
 
 
-/* Tutorial card */
+/* Tutorial cards */
+.tutorial-intro { color: #555; margin-bottom: 16px; }
+.tutorial-row { margin-top: 8px; }
+.tutorial-row > [class*="col-"] { margin-bottom: 16px; display: flex; }
 .tutorial-card {
+    width: 100%;
     border: 1px solid #e0e0e0;
     border-left: 4px solid #009688;
     border-radius: 8px;
-    padding: 24px;
+    padding: 22px 24px;
     background: #fafafa;
-    margin: 8px 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tutorial-card:hover {
+    border-color: #009688;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 150, 136, 0.10);
 }
 .tutorial-card-header {
     display: flex;
@@ -1120,11 +1131,26 @@ li {
     gap: 12px;
     margin-bottom: 12px;
 }
-.tutorial-card-header i { font-size: 1.8em; color: #009688; }
+.tutorial-card-header i { font-size: 1.8em; color: #009688; line-height: 1; }
 .tutorial-card-header h5 { margin: 0; font-weight: 600; }
-.tutorial-card p { margin-bottom: 14px; }
-.tutorial-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.tutorial-actions .btn i { margin-right: 6px; }
+.tutorial-card p {
+    margin-bottom: 16px;
+    flex: 1;
+    text-align: left;
+    line-height: 1.5;
+    color: #444;
+}
+.tutorial-card p code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.92em;
+    background: rgba(0, 150, 136, 0.10);
+    color: #00695c;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+.tutorial-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.tutorial-actions .btn i,
+.tutorial-actions .btn-primary-solid i { margin-right: 6px; }
 
 /* Schedule grid */
 .schedule-grid { margin-top: 8px; margin-bottom: 8px; }
@@ -1224,6 +1250,22 @@ li {
     color: #009688;
 }
 .award-each { font-size: 0.7em; color: #777; font-weight: 400; }
+
+.award-bonus {
+    margin-top: 8px;
+    padding: 6px 10px;
+    border-top: 1px dashed rgba(212, 175, 55, 0.5);
+    font-size: 0.78em;
+    font-weight: 600;
+    color: #b8881f;
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.award-bonus i { font-size: 1.05em; }
 
 /* Mobile tweaks for Challenge components */
 @media screen and (max-width: 768px) {
