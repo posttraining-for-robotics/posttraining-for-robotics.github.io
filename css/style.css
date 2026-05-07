@@ -1267,6 +1267,29 @@ li {
 }
 .award-bonus i { font-size: 1.05em; }
 
+.award-extra-note {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(0, 150, 136, 0.08) 0%, rgba(212, 175, 55, 0.08) 100%);
+    border-left: 4px solid #d4af37;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95em;
+    color: #333;
+}
+.award-extra-note:first-of-type { margin-top: 18px; }
+.award-extra-note i { font-size: 1.4em; color: #d4af37; flex-shrink: 0; }
+.award-extra-note b { color: #009688; }
+
+/* Technical report variant — teal-led to differentiate from the gold "presentation" callout */
+.award-extra-note.report {
+    background: linear-gradient(135deg, rgba(0, 150, 136, 0.12) 0%, rgba(0, 150, 136, 0.04) 100%);
+    border-left-color: #009688;
+}
+.award-extra-note.report i { color: #009688; }
+
 /* Mobile tweaks for Challenge components */
 @media screen and (max-width: 768px) {
     .prize-banner .prize-amount { font-size: 1.9em; display: block; margin-right: 0; }
