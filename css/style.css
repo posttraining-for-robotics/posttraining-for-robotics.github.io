@@ -1466,6 +1466,33 @@ hr.half-rule {
 }
 .profpic:hover img { border-color: #009688; }
 
+/* TBA placeholder for upcoming speakers */
+.profpic.speaker-tba { padding-top: 14px; }
+.profpic.speaker-tba .speaker-tba-circle {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px dashed rgba(0, 150, 136, 0.45);
+    background: rgba(0, 150, 136, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #009688;
+    font-size: 2.2em;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.profpic.speaker-tba:hover .speaker-tba-circle {
+    border-color: #009688;
+    background: rgba(0, 150, 136, 0.10);
+    transform: scale(1.02);
+}
+.profpic.speaker-tba .profname { color: #009688; font-style: italic; }
+.profpic.speaker-tba .institution { color: #777; font-style: italic; }
+
+/* Inline muted-em used in Schedule for "more speakers TBA" */
+.text-muted-em { color: #888; font-style: italic; }
+
 /* --- Schedule table polish --- */
 #schedule .table {
     border: 1px solid #e0e0e0;
