@@ -1220,6 +1220,21 @@ li {
     vertical-align: middle;
 }
 .awards-grid { margin-top: 8px; }
+
+.awards-track-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 4px 0;
+    padding: 10px 16px;
+    background: rgba(0, 150, 136, 0.06);
+    border-left: 3px solid #009688;
+    border-radius: 6px;
+    font-size: 0.95em;
+    color: #333;
+}
+.awards-track-note i { color: #009688; font-size: 1.05em; flex-shrink: 0; }
+.awards-track-note b { color: #009688; }
 .award-card {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
