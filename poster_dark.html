@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PR-RFM 2026 · Promo Poster · Dark</title>
+<link rel="stylesheet" href="fonts/bootstrap-icons.css">
+<style>
+/* Local Montserrat — single woff2 mapped across all weights to avoid
+   any network dependency at print/PDF time. */
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("fonts/Montserrat-latin.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-display: block;
+    src: url("fonts/Montserrat-latin.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-display: block;
+    src: url("fonts/Montserrat-latin.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-display: block;
+    src: url("fonts/Montserrat-latin.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 800;
+    font-display: block;
+    src: url("fonts/Montserrat-latin.woff2") format("woff2");
+}
+/* ============================================================
+   1080×1920 social-media poster.
+   Open in Chrome → DevTools → toggle device toolbar → set
+   viewport to 1080×1920 → "Capture full size screenshot"
+   (or print → save as PDF, then export to PNG).
+   ============================================================ */
+
+:root {
+    --teal: #009688;
+    --teal-deep: #00796b;
+    --teal-soft: rgba(0, 150, 136, 0.14);
+    --gold: #d4af37;
+    --silver: #c0c0c0;
+    --bronze: #cd7f32;
+    --ink: #f4f6f8;
+    --muted: #9aa3ab;
+    --bg: #1a2a35;
+    --panel: #243440;
+    --panel-line: rgba(128, 203, 196, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Force backgrounds + colors to be preserved when printing / saving as PDF */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+html, body {
+    background: #1a1a1a;
+    font-family: "Montserrat", system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+.poster {
+    width: 1080px;
+    height: 1920px;
+    margin: 0 auto;
+    background-color: #1a2a35;
+    background-image: linear-gradient(135deg,
+        rgba(0, 150, 136, 0.18) 0%,
+        rgba(0, 121, 107, 0.06) 45%,
+        rgba(0, 100, 110, 0.04) 70%,
+        rgba(0, 80, 90, 0.16) 100%);
+    color: var(--ink);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============== HERO ============== */
+.hero {
+    height: 480px;
+    position: relative;
+    color: #fff;
+    background: #001828;
+    overflow: hidden;
+}
+.hero-photo {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    z-index: 0;
+    display: block;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 100%),
+        linear-gradient(135deg, rgba(0, 25, 40, 0.50) 0%, rgba(0, 80, 90, 0.40) 50%, rgba(0, 121, 107, 0.50) 100%);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 44px 72px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    border: 1.5px solid rgba(255,255,255,0.55);
+    border-radius: 999px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.12);
+    align-self: flex-start;
+}
+.hero-eyebrow i { color: #ffd166; font-size: 1.05em; }
+
+.hero-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    text-shadow: 0 3px 18px rgba(0,0,0,0.55);
+}
+
+.hero-tagline {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.95);
+    margin-top: 10px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+}
+
+.hero-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.hero-meta {
+    display: flex;
+    gap: 22px;
+    font-size: 22px;
+    color: rgba(255,255,255,0.96);
+    font-weight: 500;
+    flex-wrap: wrap;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+}
+.hero-meta i { color: #80cbc4; margin-right: 6px; }
+.hero-meta-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.4);
+}
+.hero-tracks {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.track-pill {
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(255, 209, 102, 0.18);
+    border: 1.5px solid rgba(255, 209, 102, 0.65);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+}
+.track-pill i { color: #ffd166; }
+.track-pill .label-prefix {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: #ffd166;
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+/* ============== TASKS ============== */
+.tasks {
+    padding: 30px 72px 14px;
+    background: transparent;
+}
+.section-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.2;
+}
+.section-title > i {
+    color: #80cbc4;
+    font-size: 1.0em;
+}
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--teal) 0%, transparent 100%);
+}
+.section-title small {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-left: 4px;
+}
+
+.task-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+.task-card {
+    border: 1px solid var(--panel-line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--panel);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+.task-thumb {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #000;
+    object-fit: cover;
+    display: block;
+}
+.task-meta {
+    padding: 12px 14px 14px;
+    border-top: 3px solid var(--teal);
+    background: rgba(0, 0, 0, 0.30);
+}
+.task-meta-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.task-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.task-name {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    word-break: break-word;
+}
+.task-rule {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 2px;
+}
+.task-rule b { color: var(--teal); font-weight: 700; }
+
+/* ============== AWARDS + TIMELINE (combined two-column) ============== */
+.awards-timeline {
+    padding: 8px 72px 0;
+}
+.at-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Vertical timeline (left col) */
+.vt-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+.vt-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #80cbc4;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.vt-title i { font-size: 1.0em; }
+.vt-list {
+    position: relative;
+    padding-left: 22px;
+}
+.vt-list::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal) 0%, var(--teal-deep) 100%);
+}
+.vt-event {
+    position: relative;
+    padding-bottom: 8px;
+}
+.vt-event:last-child { padding-bottom: 0; }
+.vt-event::before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 3px solid #243440;
+    box-shadow: 0 0 0 2px var(--teal);
+}
+.vt-event.is-key::before { background: #ffd166; box-shadow: 0 0 0 2px var(--teal-deep); }
+.vt-date {
+    font-size: 12px;
+    font-weight: 700;
+    color: #80cbc4;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+}
+.vt-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+}
+.vt-sub {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.3;
+}
+
+/* Awards (right col) — featured 1st row + 3-up rest */
+.aw-card {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+    color: #fff;
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 28px rgba(0, 150, 136, 0.32);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.aw-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ffd166;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.aw-title .pool {
+    background: rgba(255, 209, 102, 0.20);
+    border: 1px solid rgba(255, 209, 102, 0.55);
+    color: #ffd166;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+.aw-tier-1st {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: rgba(255, 209, 102, 0.16);
+    border: 1.5px solid #ffd166;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+.aw-tier-1st .medal { font-size: 26px; flex-shrink: 0; }
+.aw-tier-1st .rank { font-weight: 700; }
+.aw-tier-1st .amount { color: #ffd166; font-weight: 800; }
+.aw-tier-1st .amount { margin-left: auto; }
+.aw-track-note {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.10);
+    border-left: 2px solid #ffd166;
+    padding: 5px 10px;
+    border-radius: 4px;
+    line-height: 1.4;
+}
+.aw-track-note i { color: #ffd166; margin-right: 4px; }
+.aw-track-note b { color: #ffd166; }
+.aw-tier-rest {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+.aw-tier-rest .aw-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1.25;
+}
+.aw-mini .medal { font-size: 18px; line-height: 1; }
+.aw-mini .rank { font-size: 12px; font-weight: 600; color: #fff; margin-top: 2px; opacity: 0.92; }
+.aw-mini .amount { font-size: 14px; font-weight: 800; color: #ffd166; margin-top: 2px; }
+.aw-extras {
+    margin-top: 6px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.96);
+    line-height: 1.55;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 500;
+}
+.aw-extras i { color: #ffd166; margin-right: 6px; font-size: 1.05em; }
+.aw-extras b { color: #ffd166; font-weight: 700; }
+
+/* ============== WORKSHOP PROGRAM ============== */
+.workshop {
+    padding: 22px 72px 16px;
+}
+.ws-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+.ws-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    line-height: 1.2;
+}
+.ws-title i { color: #80cbc4; font-size: 1.0em; }
+.ws-meta {
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    gap: 14px;
+}
+.ws-meta i { color: #80cbc4; margin-right: 4px; }
+
+.ws-program {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.ws-item {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px 16px;
+    background: #233844;
+    border: 1px solid rgba(0, 150, 136, 0.30);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.30);
+}
+.ws-item.is-key {
+    background: #284553;
+    border-color: var(--teal);
+}
+.ws-time {
+    flex-shrink: 0;
+    width: 86px;
+    text-align: left;
+    border-right: 2px solid var(--teal);
+    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ws-time .from {
+    font-size: 18px;
+    font-weight: 800;
+    color: #80cbc4;
+    line-height: 1;
+}
+.ws-time .to {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+.ws-body { flex: 1; min-width: 0; }
+.ws-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+.ws-name i { color: #80cbc4; }
+.ws-detail {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.4;
+}
+.ws-detail b { color: var(--ink); font-weight: 600; }
+.ws-detail .speaker-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(0, 150, 136, 0.22);
+    color: #80cbc4;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 11px;
+    margin-right: 4px;
+    border: 1px solid rgba(0, 150, 136, 0.35);
+}
+
+/* ============== CTA + QR ============== */
+.cta {
+    margin: 14px 72px 0;
+    padding: 22px 28px;
+    border-radius: 16px;
+    background: #1a1a1a;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 18px;
+    align-items: center;
+}
+.cta-text { display: flex; flex-direction: column; gap: 6px; padding-right: 4px; }
+.cta-headline {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.05;
+}
+.cta-headline .accent { color: #ffd166; }
+.cta-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+}
+.cta-url {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color: #80cbc4;
+    font-size: 14px;
+    margin-top: 2px;
+}
+.qr-block {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.qr-block img {
+    width: 160px;
+    height: 160px;
+    display: block;
+}
+.qr-block .scan-icon {
+    color: var(--teal);
+    font-size: 14px;
+}
+.qr-block .scan {
+    font-size: 11px;
+    color: #1a1a1a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    text-align: center;
+    line-height: 1.2;
+}
+.qr-block .scan small {
+    display: block;
+    font-size: 10px;
+    color: #555;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+.qr-block.register .scan { color: var(--teal-deep); }
+
+/* ============== FOOTER (Organizers | Sponsors, two columns) ============== */
+.partners {
+    margin-top: auto;
+    padding: 22px 72px 26px;
+    background: #14202a;
+    border-top: 1px solid rgba(0, 150, 136, 0.25);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: stretch;
+}
+.col-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: #80cbc4;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.col-label small {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+}
+
+/* Organizers (left) */
+.organizers-block { min-width: 0; align-self: stretch; }
+.organizers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-auto-flow: column;
+    column-gap: 22px;
+    row-gap: 6px;
+    font-size: 13.5px;
+    line-height: 1.45;
+}
+.organizers-grid .name { color: var(--ink); font-weight: 600; }
+.organizers-grid .aff { color: var(--muted); font-weight: 500; margin-left: 4px; }
+
+/* Sponsors (right) — pure white card */
+.sponsors-block {
+    width: 460px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px 20px 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.30);
+}
+.sponsors-block .col-label {
+    color: #009688;
+    margin-bottom: 8px;
+}
+.partners-logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 22px;
+    align-items: center;
+    justify-items: center;
+}
+.partners-logos img {
+    max-height: 72px;
+    max-width: 170px;
+    object-fit: contain;
+}
+
+/* ============== PRINT ============== */
+@media print {
+    @page {
+        size: 1080px 1920px;
+        margin: 0;
+    }
+    html, body {
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        width: 1080px;
+        height: 1920px;
+    }
+    .poster {
+        width: 1080px;
+        height: 1920px;
+        margin: 0;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+    <!-- HERO -->
+    <section class="hero">
+        <img class="hero-photo" src="images/poster/hero-bg.jpg" alt="Sydney">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow"><i class="bi bi-trophy-fill"></i> RSS 2026 · Workshop &amp; Challenge</div>
+            <div>
+                <h1 class="hero-title">Post-training<br>for Robotics<br>Foundation Models</h1>
+                <div class="hero-tagline">From Pretrained Policies to Real-World Mastery.</div>
+            </div>
+            <div class="hero-bottom">
+                <div class="hero-meta">
+                    <span><i class="bi bi-calendar-event-fill"></i> July 13, 2026</span>
+                    <div class="hero-meta-divider"></div>
+                    <span><i class="bi bi-geo-alt-fill"></i> University of Technology Sydney</span>
+                </div>
+                <div class="hero-tracks">
+                    <span class="track-pill"><span class="label-prefix">Track</span><i class="bi bi-bullseye"></i> Single-Task · Specialist</span>
+                    <span class="track-pill"><span class="label-prefix">Track</span><i class="bi bi-grid-3x3-gap-fill"></i> Multi-Task · Generalist</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TASKS -->
+    <section class="tasks">
+        <div class="section-title">
+            <i class="bi bi-bullseye"></i> First Real-World RL Challenge
+            <small>3 high-precision bimanual tasks · standardized dataset (expert + success/failure rollouts + human-in-the-loop data)</small>
+        </div>
+        <div class="task-row">
+            <div class="task-card">
+                <img class="task-thumb" src="images/poster/insert-mouse-battery.jpg" alt="insert-mouse-battery">
+                <div class="task-meta">
+                    <div class="task-meta-top">
+                        <span class="task-num">1</span>
+                        <span class="task-name">insert-mouse-battery</span>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <img class="task-thumb" src="images/poster/tower-of-hanoi-game.jpg" alt="tower-of-hanoi-game">
+                <div class="task-meta">
+                    <div class="task-meta-top">
+                        <span class="task-num">2</span>
+                        <span class="task-name">tower-of-hanoi-game</span>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <img class="task-thumb" src="images/poster/seal-water-bottle-cap.jpg" alt="seal-water-bottle-cap">
+                <div class="task-meta">
+                    <div class="task-meta-top">
+                        <span class="task-num">3</span>
+                        <span class="task-name">seal-water-bottle-cap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWARDS + TIMELINE (combined two-column) -->
+    <section class="awards-timeline">
+        <div class="at-grid">
+            <!-- LEFT: Vertical timeline -->
+            <div class="vt-card">
+                <div class="vt-title"><i class="bi bi-calendar-week-fill"></i> Key Dates</div>
+                <div class="vt-list">
+                    <div class="vt-event">
+                        <div class="vt-date">May 30, 2026</div>
+                        <div class="vt-name">Registration closes</div>
+                        <div class="vt-sub">Team sign-up deadline</div>
+                    </div>
+                    <div class="vt-event">
+                        <div class="vt-date">June 10, 2026</div>
+                        <div class="vt-name">Phase 1 · Ranking</div>
+                        <div class="vt-sub">Policy submission ends</div>
+                    </div>
+                    <div class="vt-event is-key">
+                        <div class="vt-date">Early June, 2026</div>
+                        <div class="vt-name">Top 3 announced</div>
+                        <div class="vt-sub">Advance to Phase 2</div>
+                    </div>
+                    <div class="vt-event">
+                        <div class="vt-date">Jun 10 – July 5</div>
+                        <div class="vt-name">Phase 2 · Iterate</div>
+                        <div class="vt-sub">Iterative rollout collection</div>
+                    </div>
+                    <div class="vt-event is-key">
+                        <div class="vt-date">July 13, 2026</div>
+                        <div class="vt-name">Workshop @ RSS</div>
+                        <div class="vt-sub">Reports &amp; panel</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Awards (tier list only) -->
+            <div class="aw-card">
+                <div class="aw-title">
+                    <span><i class="bi bi-trophy-fill"></i> Awards</span>
+                    <span class="pool">Per Track</span>
+                </div>
+                <div class="aw-track-note"><i class="bi bi-info-circle-fill"></i> Listed prizes apply to <b>each track</b> (Single-Task &amp; Multi-Task).</div>
+                <div class="aw-tier-1st">
+                    <span class="medal">🥇</span>
+                    <span class="rank">1st Place</span>
+                    <span class="amount">$5,000</span>
+                </div>
+                <div class="aw-tier-rest">
+                    <div class="aw-mini">
+                        <span class="medal">🥈</span>
+                        <span class="rank">2nd Place</span>
+                        <span class="amount">$3,000</span>
+                    </div>
+                    <div class="aw-mini">
+                        <span class="medal">🥉</span>
+                        <span class="rank">3rd Place</span>
+                        <span class="amount">$2,000</span>
+                    </div>
+                    <div class="aw-mini">
+                        <span class="medal">🏅</span>
+                        <span class="rank">Top 4–10</span>
+                        <span class="amount">$500 each</span>
+                    </div>
+                </div>
+                <div class="aw-extras">
+                    <span><i class="bi bi-megaphone-fill"></i> <b>Top teams</b> invited to present at the workshop</span>
+                    <span><i class="bi bi-file-earmark-text-fill"></i> Lessons compiled into a community <b>technical report</b></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKSHOP PROGRAM -->
+    <section class="workshop">
+        <div class="ws-header">
+            <div class="ws-title"><i class="bi bi-mic-fill"></i> Workshop Program @ RSS 2026</div>
+            <div class="ws-meta">
+                <span><i class="bi bi-calendar-event-fill"></i>July 13, 2026</span>
+                <span><i class="bi bi-geo-alt-fill"></i>Sydney</span>
+            </div>
+        </div>
+        <div class="ws-program">
+            <div class="ws-item is-key">
+                <div class="ws-time"><div class="from">9:00</div><div class="to">– 10:30</div></div>
+                <div class="ws-body">
+                    <div class="ws-name"><i class="bi bi-mic-fill"></i> Invited Talks</div>
+                    <div class="ws-detail">
+                        <span class="speaker-pill">Karl Pertsch</span>
+                        <span class="speaker-pill">Abhishek Gupta</span>
+                        <span class="speaker-pill">More TBA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ws-item">
+                <div class="ws-time"><div class="from">10:30</div><div class="to">– 11:00</div></div>
+                <div class="ws-body">
+                    <div class="ws-name"><i class="bi bi-cup-hot-fill"></i> Coffee + Live Demos</div>
+                    <div class="ws-detail">Policy deployment demos by participating teams.</div>
+                </div>
+            </div>
+            <div class="ws-item is-key">
+                <div class="ws-time"><div class="from">11:00</div><div class="to">– 12:00</div></div>
+                <div class="ws-body">
+                    <div class="ws-name"><i class="bi bi-bar-chart-fill"></i> Team Reports</div>
+                    <div class="ws-detail">Top teams present results, methods &amp; lessons learned.</div>
+                </div>
+            </div>
+            <div class="ws-item is-key">
+                <div class="ws-time"><div class="from">12:00</div><div class="to">– 13:00</div></div>
+                <div class="ws-body">
+                    <div class="ws-name"><i class="bi bi-chat-square-quote-fill"></i> Panel Discussion</div>
+                    <div class="ws-detail">Q&amp;A with speakers, organizers &amp; audience.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA + QR -->
+    <section class="cta">
+        <div class="cta-text">
+            <div class="cta-headline">Join the <span class="accent">Challenge</span></div>
+            <div class="cta-sub">Visit the site for dataset, baseline code, and rules · Scan the right QR to register your team.</div>
+            <div class="cta-url">posttraining-for-robotics.github.io</div>
+        </div>
+        <div class="qr-block">
+            <img src="images/poster/qr-website.png" alt="QR · website">
+            <span class="scan"><i class="bi bi-globe scan-icon"></i> Visit<small>website</small></span>
+        </div>
+        <div class="qr-block register">
+            <img src="images/poster/qr-register.png" alt="QR · register">
+            <span class="scan"><i class="bi bi-pencil-square scan-icon"></i> Register<small>team form</small></span>
+        </div>
+    </section>
+
+    <!-- ORGANIZERS (left) + SPONSORS (right) -->
+    <footer class="partners">
+        <div class="organizers-block">
+            <div class="col-label">Organizers</div>
+            <div class="organizers-grid">
+                <div><span class="name">Shiduo Zhang</span><span class="aff">Fudan · WorldEngine</span></div>
+                <div><span class="name">Yue Wang</span><span class="aff">USC</span></div>
+                <div><span class="name">Haonan Chang</span><span class="aff">WorldEngine</span></div>
+                <div><span class="name">Hang Zhao</span><span class="aff">Tsinghua</span></div>
+                <div><span class="name">Yicheng Liu</span><span class="aff">Tsinghua</span></div>
+                <div><span class="name">Vitor Campagnolo Guizilini</span><span class="aff">TRI</span></div>
+                <div><span class="name">Andrew Wagenmaker</span><span class="aff">UC Berkeley</span></div>
+                <div><span class="name">Andreea Bobu</span><span class="aff">MIT</span></div>
+                <div><span class="name">Anushri Dixit</span><span class="aff">UCLA</span></div>
+                <div><span class="name">Chao Yu</span><span class="aff">Tsinghua</span></div>
+                <div><span class="name">Dhruv Shah</span><span class="aff">Princeton</span></div>
+                <div><span class="name">Max Simchowitz</span><span class="aff">CMU</span></div>
+            </div>
+        </div>
+        <div class="sponsors-block">
+            <div class="col-label">Industry Partners</div>
+            <div class="partners-logos">
+                <img src="images/worldengine.png" alt="WorldEngine">
+                <img src="images/galaxea.png" alt="Galaxea">
+                <img src="images/tianji.png" alt="Tianji">
+                <img src="images/tri.png" alt="TRI">
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
