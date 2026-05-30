@@ -110,11 +110,12 @@ html, body {
     flex-direction: column;
     gap: 14px;
     min-width: 0;
+    margin-top: -10px;
 }
 .col-side {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 25px;
     min-width: 0;
 }
 
@@ -294,7 +295,7 @@ html, body {
 }
 .task-thumb {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 2/1;
     background: #000;
     object-fit: cover;
     display: block;
@@ -345,8 +346,8 @@ html, body {
 }
 .at-grid {
     display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 24px;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
     align-items: stretch;
 }
 
@@ -418,6 +419,11 @@ html, body {
     font-size: 11px;
     color: var(--muted);
     line-height: 1.3;
+}
+.vt-sub.vt-sub-bright {
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 500;
+    font-size: 12px;
 }
 
 /* Awards (right col) — featured 1st row + 3-up rest */
@@ -518,7 +524,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     gap: 14px;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 }
 .ws-title {
     font-size: 26px;
@@ -547,8 +553,8 @@ html, body {
 .ws-item {
     display: flex;
     align-items: stretch;
-    gap: 14px;
-    padding: 14px 16px;
+    gap: 12px;
+    padding: 8px 14px;
     background: #233844;
     border: 1px solid rgba(0, 150, 136, 0.30);
     border-radius: 10px;
@@ -558,6 +564,30 @@ html, body {
     background: #284553;
     border-color: var(--teal);
 }
+.ws-item.ws-item-light {
+    background: transparent;
+    border: 1px dashed rgba(0, 150, 136, 0.30);
+    box-shadow: none;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.ws-item.ws-item-light .ws-time-mini {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    flex-shrink: 0;
+}
+.ws-item.ws-item-light .ws-name-mini {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.78);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.ws-item.ws-item-light .ws-name-mini i { color: var(--muted); }
 .ws-time {
     flex-shrink: 0;
     width: 86px;
@@ -758,8 +788,8 @@ html, body {
 .ws-section {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 4px;
+    gap: 6px;
+    margin-top: 2px;
 }
 .ws-col-header {
     font-size: 13px;
@@ -788,25 +818,27 @@ html, body {
     font-size: 12px;
     color: #80cbc4;
     font-style: italic;
-    margin-top: 4px;
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: center;
+    line-height: 1.2;
 }
 .speaker-row {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 14px 18px;
+    gap: 12px;
+    padding: 10px 14px;
     background: #284553;
     border: 1px solid var(--teal);
     border-radius: 12px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 .speaker-row img {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--teal);
+    border: 2px solid var(--teal);
     flex-shrink: 0;
 }
 .speaker-row .speaker-meta { display: flex; flex-direction: column; min-width: 0; }
@@ -825,8 +857,8 @@ html, body {
 .ws-others {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 4px;
+    gap: 6px;
+    margin-top: 2px;
 }
 
 /* Right sidebar column overrides */
@@ -889,6 +921,8 @@ html, body {
 .col-side .partners-logos img {
     width: 220px;
     height: 72px;
+    max-width: none;
+    max-height: none;
     object-fit: contain;
     display: block;
 }
@@ -990,12 +1024,9 @@ html, body {
                 </div>
                 <div class="ws-tba-pill">+ more speakers TBA</div>
                 <div class="ws-others">
-                    <div class="ws-item">
-                        <div class="ws-time"><div class="from">10:30</div><div class="to">– 11:00</div></div>
-                        <div class="ws-body">
-                            <div class="ws-name"><i class="bi bi-cup-hot-fill"></i> Coffee + Live Demos</div>
-                            <div class="ws-detail">Policy deployment demos by participating teams.</div>
-                        </div>
+                    <div class="ws-item ws-item-light">
+                        <span class="ws-time-mini">10:30 – 11:00</span>
+                        <span class="ws-name-mini"><i class="bi bi-cup-hot-fill"></i> Coffee Break</span>
                     </div>
                     <div class="ws-item is-key">
                         <div class="ws-time"><div class="from">11:00</div><div class="to">– 12:00</div></div>
@@ -1064,20 +1095,20 @@ html, body {
                             <div class="vt-name">Registration closed</div>
                             <div class="vt-sub">Team sign-up deadline</div>
                         </div>
-                        <div class="vt-event">
+                        <div class="vt-event is-key">
                             <div class="vt-date">June 10, 2026</div>
                             <div class="vt-name">Phase 1 · Ranking</div>
-                            <div class="vt-sub">Policy submission ends</div>
+                            <div class="vt-sub vt-sub-bright">Participants leverage <br> same expert &amp; off-policy data</div>
                         </div>
-                        <div class="vt-event is-key">
+                        <div class="vt-event">
                             <div class="vt-date">Early June, 2026</div>
                             <div class="vt-name">Top 3 announced</div>
                             <div class="vt-sub">Advance to Phase 2</div>
                         </div>
-                        <div class="vt-event">
+                        <div class="vt-event is-key">
                             <div class="vt-date">Jun 10 – July 5</div>
                             <div class="vt-name">Phase 2 · Iterate</div>
-                            <div class="vt-sub">Iterative rollout collection</div>
+                            <div class="vt-sub vt-sub-bright">Iterative rollout support <br> &amp; Online training collaboration</div>
                         </div>
                         <div class="vt-event is-key">
                             <div class="vt-date">July 13, 2026</div>
@@ -1152,11 +1183,11 @@ html, body {
         <div class="sponsors-block">
             <div class="col-label">Industry Partners</div>
             <div class="partners-logos">
-                <img src="images/worldengine.png" alt="WorldEngine" style="width: 220px; height: 60px;">
+                <img src="images/worldengine.png" alt="WorldEngine" style="width: 220px; height: 50px;">
                 <img src="images/galaxea.png" alt="Galaxea" style="width: 220px; height: 40px;">
                 <div class="partners-row">
-                    <img src="images/tianji.png" alt="Tianji" style="width: 180px; height: 80px;">
-                    <img src="images/tri.png" alt="TRI" style="width: 110px; height: 80px;">
+                    <img src="images/tianji.png" alt="Tianji" style="width: 216px; height: 96px;">
+                    <img src="images/tri.png" alt="TRI" style="width: 100px; height: 100px;">
                 </div>
             </div>
         </div>
