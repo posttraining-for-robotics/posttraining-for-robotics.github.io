@@ -797,6 +797,13 @@ li {
     color: #777;
     margin-top: 2px;
 }
+.lb-trials {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.75em;
+    color: #999;
+    margin-top: 3px;
+    letter-spacing: 0.02em;
+}
 
 /* Average column emphasis */
 .leaderboard-table tbody .lb-avg-score,

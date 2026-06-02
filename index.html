@@ -81,6 +81,9 @@
 				<li class="nav-item">
 				    <a class="nav-link js-scroll-trigger" href="#organizers">Organizers</a>
 				</li>
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
+				</li>
 		    </ul>
 		</div>
 	    </div>
@@ -567,22 +570,60 @@
 					<tr class="lb-row">
 					    <td class="lb-rank-cell">1</td>
 					    <td class="lb-team-cell">
-						<div class="lb-team-name">VLAlab-JP</div>
+						<div class="lb-team-name">Sii-Yitong</div>
+						<div class="lb-model-name">just-one-step</div>
+						<div class="lb-trials">trials: 6 / 5 / 5</div>
 					    </td>
-					    <td>80</td><td>80%</td>
-					    <td>—</td><td>—</td>
-					    <td>—</td><td>—</td>
-					    <td class="lb-avg-score">—</td><td class="lb-avg-sr">—</td>
+					    <td>73.3</td><td>66.7%</td>
+					    <td>100</td><td>100%</td>
+					    <td>70</td><td>60%</td>
+					    <td class="lb-avg-score">81.1</td><td class="lb-avg-sr">75.6%</td>
 					</tr>
 					<tr class="lb-row">
 					    <td class="lb-rank-cell">2</td>
 					    <td class="lb-team-cell">
-						<div class="lb-team-name">sii-onestep-fm</div>
+						<div class="lb-team-name">VLAlab-JP</div>
+						<div class="lb-trials">trials: 20 / — / —</div>
+					    </td>
+					    <td>80</td><td>80%</td>
+					    <td>—</td><td>—</td>
+					    <td>—</td><td>—</td>
+					    <td class="lb-avg-score">80</td><td class="lb-avg-sr">80%</td>
+					</tr>
+					<tr class="lb-row">
+					    <td class="lb-rank-cell">3</td>
+					    <td class="lb-team-cell">
+						<div class="lb-team-name">Haruki</div>
+						<div class="lb-model-name">U-Tokyo</div>
+						<div class="lb-trials">trials: — / 10 / —</div>
+					    </td>
+					    <td>—</td><td>—</td>
+					    <td>66</td><td>50%</td>
+					    <td>—</td><td>—</td>
+					    <td class="lb-avg-score">66</td><td class="lb-avg-sr">50%</td>
+					</tr>
+					<tr class="lb-row">
+					    <td class="lb-rank-cell">4</td>
+					    <td class="lb-team-cell">
+						<div class="lb-team-name">Sii-Yitong</div>
+						<div class="lb-model-name">1step</div>
+						<div class="lb-trials">trials: 10 / — / —</div>
 					    </td>
 					    <td>30</td><td>10%</td>
 					    <td>—</td><td>—</td>
 					    <td>—</td><td>—</td>
-					    <td class="lb-avg-score">—</td><td class="lb-avg-sr">—</td>
+					    <td class="lb-avg-score">30</td><td class="lb-avg-sr">10%</td>
+					</tr>
+					<tr class="lb-row">
+					    <td class="lb-rank-cell">5</td>
+					    <td class="lb-team-cell">
+						<div class="lb-team-name">Sii-Yitong</div>
+						<div class="lb-trials">trials: 11 / — / —</div>
+					    </td>
+					    <td>27.3</td><td>9.1%</td>
+					    <td>—</td><td>—</td>
+					    <td>—</td><td>—</td>
+					    <td class="lb-avg-score">27.3</td><td class="lb-avg-sr">9.1%</td>
 					</tr>
 					<tr class="lb-row">
 					    <td class="lb-rank-cell">—</td>
@@ -622,6 +663,18 @@
 				    </thead>
 				    <tbody>
 					<tr class="lb-row">
+					    <td class="lb-rank-cell">1</td>
+					    <td class="lb-team-cell">
+						<div class="lb-team-name">Sii-Yitong</div>
+						<div class="lb-model-name">just-one-step</div>
+						<div class="lb-trials">trials: — / 6 / —</div>
+					    </td>
+					    <td>—</td><td>—</td>
+					    <td>16.7</td><td>16.7%</td>
+					    <td>—</td><td>—</td>
+					    <td class="lb-avg-score">16.7</td><td class="lb-avg-sr">16.7%</td>
+					</tr>
+					<tr class="lb-row">
 					    <td class="lb-rank-cell">—</td>
 					    <td class="lb-team-cell">
 						<div class="lb-team-name">Baseline</div>
@@ -639,7 +692,11 @@
 
 			<p class="leaderboard-note">
 			    <i class="bi bi-info-circle"></i>
-			    <b>Score</b>: progress score per task (higher is better). <b>SR</b>: success rate over rollouts. The final ranking uses the <b>Average</b> column.
+			    <b>Score</b>: progress score per task (higher is better). <b>SR</b>: success rate over rollouts. <b>trials</b>: number of evaluation rollouts per task, listed in column order <code>insert-mouse-battery / tower-of-hanoi-game / seal-water-bottle-cap</code>. The final ranking uses the <b>Average</b> column.
+			</p>
+			<p class="leaderboard-note" style="font-style: italic;">
+			    <i class="bi bi-exclamation-triangle-fill"></i>
+			    <b>Note:</b> The current leaderboard is in an <b>iteration and debugging phase</b>. Submissions are being evaluated with 5–10 rollouts per task to allow rapid iteration. The <b>final ranking</b> will be re-run under a <b>unified evaluation setting</b> with a standardized trial count once all teams have stabilized.
 			</p>
 
 			<!-- Registration -->
@@ -687,7 +744,7 @@
 			<div class="profpic xlarge-1 columns">
 				<img  src="images/jianlan_luo.jpg" class="figure-img img-fluid">
 				<p class=profname>  <a href="https://jianlanluo.github.io/">Jianlan Luo</a> </p>
-				<p class=institution>AgiBot</p>
+				<p class=institution>AgiBot · Sii</p>
 			</div>
 			</a>
 
@@ -892,10 +949,10 @@
 		</div>
 
 		<div class="row">
-			<a href='https://www.anushridixit.com/'>
+			<a href='https://practice-lab-ucla.github.io/'>
 			<div class="profpic xlarge-1 columns">
 				<img src="images/dixit.png" class="figure-img img-fluid">
-				<p class=profname><a href="https://www.anushridixit.com/">Anushri Dixit</a></p>
+				<p class=profname><a href="https://practice-lab-ucla.github.io/">Anushri Dixit</a></p>
 				<p class=institution>University of California, Los Angeles</p>
 			</div>
 			</a>
@@ -938,14 +995,19 @@
 			<a href="https://worldengine.ai/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
 				<img src="images/worldengine.png" class="img-fluid" style="max-height: 150px;" alt="WorldEngine">
 			</a>
-			<a href="https://galaxea-dynamics.com/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
-				<img src="images/galaxea.png" class="img-fluid" style="max-height: 150px;" alt="Galaxea">
-			</a>
 			<a href="https://www.tianjizn.com/en/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
 				<img src="images/tianji.png" class="img-fluid" style="max-height: 150px;" alt="Tianji Robotics">
 			</a>
 			<a href="https://www.tri.global/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
 				<img src="images/tri.png" class="img-fluid" style="max-height: 150px;" alt="Toyota Research Institute">
+			</a>
+		</div>
+		<div class="row" style="display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap;">
+			<a href="https://galaxea-dynamics.com/" class="col-md-3 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
+				<img src="images/galaxea.png" class="img-fluid" style="max-height: 150px;" alt="Galaxea">
+			</a>
+			<a href="#" class="col-md-5 col-6" style="text-align: center; margin-bottom: 20px;" data-partner-link>
+				<img src="images/heart-of-embodied.jpg" style="max-height: 180px; max-width: 100%; height: auto;" alt="Heart of Embodied">
 			</a>
 		</div>
 
@@ -955,6 +1017,27 @@
 	</section>
 
 	<br>
+	<hr class="half-rule"/>
+	<section id="citation">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+		<span class="titlesec"><i class="bi bi-quote"></i> Citation</span>
+		<p style="margin-top: 12px;">If you use this dataset or reference the challenge in your research, please cite us:</p>
+<pre style="background:#f6f8fa; border:1px solid #e1e4e8; border-radius:8px; padding:16px; overflow-x:auto; font-size:0.85em; line-height:1.5;"><code>@misc{posttraining_robotics_2026,
+  title        = {Post-Training for Robotics Foundation Models Dataset and Challenge},
+  author       = {Zhang, Shiduo and Wang, Yue and Chang, Haonan and Zhao, Hang and
+                  Liu, Yicheng and Guizilini, Vitor and Bobu, Andreea and Wagenmaker, Andrew and
+                  Dixit, Anushri and Yu, Chao and Shah, Dhruv and Simchowitz, Max},
+  year         = {2026},
+  howpublished = {RSS 2026 Workshop &amp; Challenge},
+  url          = {https://posttraining-for-robotics.github.io}
+}</code></pre>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
 	<hr class="half-rule"/>
 	<section id="contact">
 	    <div class="container">
@@ -990,7 +1073,7 @@
 	    if (!nav) return;
 	    var scrollLinks = document.querySelectorAll('a.js-scroll-trigger');
 	    // Sections used for active-link tracking (incl. challenge sub-anchors).
-	    var sections = ['about','challenge','challenge-tasks','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration','speakers','schedule','topics','organizers'];
+	    var sections = ['about','challenge','challenge-tasks','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration','speakers','schedule','topics','organizers','citation'];
 	    // Sub-anchors that should also activate the parent "Challenge" dropdown toggle.
 	    var challengeAnchors = ['challenge','challenge-tasks','challenge-dataset','challenge-tutorial','challenge-leaderboard','challenge-registration'];
 	    var challengeToggle = document.getElementById('challengeDropdown');
