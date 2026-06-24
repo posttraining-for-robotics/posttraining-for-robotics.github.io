@@ -821,6 +821,13 @@ li {
 .leaderboard-table tbody .lb-row.silver td:first-child { border-left: 3px solid #c0c0c0; }
 .leaderboard-table tbody .lb-row.bronze td:first-child { border-left: 3px solid #cd7f32; }
 
+/* Phase-2 qualifiers: highlighted background */
+.leaderboard-table tbody tr.lb-row.advance td { background: rgba(255, 193, 7, 0.14); }
+.leaderboard-table tbody tr.lb-row.advance:hover td { background: rgba(255, 193, 7, 0.22); }
+.leaderboard-table tbody tr.lb-row.advance td:first-child { border-left: 3px solid #ffc107; }
+.leaderboard-table tbody tr.lb-row.advance .lb-avg-score,
+.leaderboard-table tbody tr.lb-row.advance .lb-avg-sr { background: rgba(255, 193, 7, 0.20); }
+
 /* "Your team here" placeholder row */
 .leaderboard-table tbody .lb-placeholder { background: rgba(0, 150, 136, 0.03); }
 .leaderboard-table tbody .lb-placeholder .lb-team-name { color: #009688; font-style: italic; }
